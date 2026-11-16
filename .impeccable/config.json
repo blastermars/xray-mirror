@@ -1,0 +1,53 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "assets-src/bodyparts3d_3.0/README_e.html"
+        ],
+        "createdAt": "2026-11-16T17:44:29.777Z",
+        "reason": "agent decided: third-party README downloaded with the BodyParts3D 3.0 data archive, git-ignored source data, not part of this app's interface"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "assets-src/bodyparts3d_3.0/README_e.html"
+        ],
+        "createdAt": "2026-11-16T17:44:29.801Z",
+        "reason": "agent decided: third-party README downloaded with the BodyParts3D 3.0 data archive, git-ignored source data, not part of this app's interface"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "assets-src/bodyparts3d/release_4.0_e.html"
+        ],
+        "createdAt": "2026-11-16T17:50:59.373Z",
+        "reason": "agent decided: third-party documentation downloaded with the BodyParts3D 4.0 data archive, git-ignored source data, not part of this app's interface"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "assets-src/bodyparts3d/README_e.html"
+        ],
+        "createdAt": "2026-11-16T17:50:59.391Z",
+        "reason": "agent decided: third-party documentation downloaded with the BodyParts3D 4.0 data archive, git-ignored source data, not part of this app's interface"
+      },
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "assets-src/bodyparts3d/README_e.html"
+        ],
+        "createdAt": "2026-11-16T17:50:59.407Z",
+        "reason": "agent decided: third-party documentation downloaded with the BodyParts3D 4.0 data archive, git-ignored source data, not part of this app's interface"
+      }
+    ]
+  }
+}

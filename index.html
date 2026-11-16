@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>X-Ray Mirror</title>
+<link rel="stylesheet" href="./src/ui/styles.css">
+</head>
+<body>
+<main class="app">
+  <section class="stage-wrap">
+    <div class="stage" id="stage">
+      <canvas id="view" aria-label="Live X-ray view of your head and hands"></canvas>
+      <svg id="leaders" aria-hidden="true"></svg>
+      <div id="labels" aria-hidden="true"></div>
+
+      <div class="anno tl">
+        <span class="marker" id="sideMarker">R</span>
+        <span id="annoTitle">SKULL · PA · LIVE</span>
+      </div>
+      <div class="anno tr" id="annoTech"></div>
+      <div class="anno bl" id="annoPose"></div>
+      <div class="anno br" id="annoFit"></div>
+
+      <div class="intro" id="intro">
+        <h1>X-Ray Mirror</h1>
+        <p>See the skull, teeth, spine and hand bones under your own skin, fitted to your face and following you live.</p>
+        <button class="primary" id="start" disabled>Loading…</button>
+        <p class="hint" id="introHint">Video stays on this device. Nothing is uploaded.</p>
+      </div>
+    </div>
+  </section>
+
+  <aside class="rail" id="rail">
+    <header>
+      <h2>X-Ray Mirror</h2>
+      <p class="state" id="state"><span class="dot"></span><span id="stateText">Starting</span></p>
+    </header>
+
+    <section class="group">
+      <h3>View</h3>
+      <div class="seg" role="radiogroup" aria-label="View" id="mode">
+        <button role="radio" data-v="radiograph" aria-checked="true">Radiograph</button>
+        <button role="radio" data-v="anatomy" aria-checked="false">Anatomy</button>
+      </div>
+    </section>
+
+    <section class="group">
+      <h3>Layers</h3>
+      <div class="chips" id="layers">
+        <button data-layer="bone" aria-pressed="true">Bone</button>
+        <button data-layer="teeth" aria-pressed="true">Teeth</button>
+        <button data-layer="spine" aria-pressed="true">Neck</button>
+        <button data-layer="chest" aria-pressed="true">Shoulders</button>
+        <button data-layer="hands" aria-pressed="true">Hands</button>
+        <button data-layer="nerves" aria-pressed="true">Nerves</button>
+        <button data-layer="brain" aria-pressed="false">Brain</button>
+        <button data-layer="muscles" aria-pressed="false">Muscles</button>
+        <button data-layer="eyes" aria-pressed="false">Eyes</button>
+      </div>
+    </section>
+
+    <section class="group">
+      <h3>Reveal</h3>
+      <div class="seg" role="radiogroup" aria-label="Reveal" id="reveal">
+        <button role="radio" data-v="whole" aria-checked="true">Whole</button>
+        <button role="radio" data-v="split" aria-checked="false">Half</button>
+        <button role="radio" data-v="lens" aria-checked="false">Lens</button>
+      </div>
+      <p class="note" id="revealNote"></p>
+    </section>
+
+    <section class="group">
+      <h3>Zoom</h3>
+      <label class="check"><input type="checkbox" id="gestureZoom" checked><span>Zoom with a two-hand pinch</span></label>
+      <p class="note">Pinch thumb and finger on both hands, then pull them apart to zoom in or bring them together to zoom out.</p>
+      <div class="row"><button id="resetZoom">Reset zoom</button></div>
+    </section>
+
+    <section class="group">
+      <label class="slider"><span>Exposure</span><output id="exposureOut">1.0</output>
+        <input type="range" id="exposure" min="0.4" max="2.4" step="0.05" value="1"></label>
+      <label class="slider"><span>Real me showing through</span><output id="realOut">12%</output>
+        <input type="range" id="real" min="0" max="1" step="0.01" value="0.12"></label>
+      <label class="check"><input type="checkbox" id="labelsOn"><span>Name the parts</span></label>
+    </section>
+
+    <section class="group fit" id="fitCard">
+      <h3>Fit to you</h3>
+      <div class="fitrow">
+        <div class="meter"><div class="bar" id="fitBar"></div></div>
+        <span class="fitstate" id="fitState">Waiting for a face</span>
+      </div>
+      <dl>
+        <div><dt>Fitted to you</dt><dd id="fitErr">–</dd></div>
+        <div><dt>One-size template</dt><dd id="rigidErr">–</dd></div>
+      </dl>
+      <p class="note">Average miss on tracked points, as a share of face width. Lower is better.</p>
+    </section>
+
+    <details class="group adv">
+      <summary>Advanced</summary>
+      <label class="slider"><span>Camera angle</span><output id="fovOut">auto</output>
+        <input type="range" id="fov" min="30" max="80" step="1" value="45"></label>
+      <label class="check"><input type="checkbox" id="fovAuto" checked><span>Pick the camera angle automatically</span></label>
+      <label class="field"><span>Quality</span>
+        <select id="quality">
+          <option value="auto" selected>Automatic</option>
+          <option value="full">Full</option>
+          <option value="light">Light (phones, slower machines)</option>
+        </select></label>
+      <label class="check"><input type="checkbox" id="personalise" checked><span>Fit the anatomy to my face</span></label>
+      <label class="check"><input type="checkbox" id="useOutline" checked><span>Use my outline to fit the skull</span></label>
+      <div class="row">
+        <button id="refit">Refit from scratch</button>
+        <button id="snapshot">Save image</button>
+      </div>
+    </details>
+
+    <footer id="credits"></footer>
+  </aside>
+</main>
+<script type="module" src="./src/main.ts"></script>
+</body>
+</html>

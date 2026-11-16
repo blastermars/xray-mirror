@@ -1,0 +1,9296 @@
+{
+ "source": "BodyParts3D 4.0",
+ "license": "CC BY 4.0",
+ "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+ "attribution": "BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International",
+ "sourceUrl": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/LATEST/",
+ "sourceArchive": "isa_BP3D_4.0_obj_99.zip",
+ "units": "mm",
+ "frame": {
+  "up": "+z",
+  "anterior": "-y",
+  "left": "+x",
+  "note": "signed axes in the original BodyParts3D frame: superior, anterior (nose direction) and the subject's left"
+ },
+ "geometry": "float32 positions in the original BodyParts3D frame; every GLB node transform is identity (no quantization, no re-centring); EXT_meshopt_compression (required) - three.js GLTFLoader needs setMeshoptDecoder(MeshoptDecoder). No normals/UVs/materials. Element meshes are concatenated, not welded to each other: a merged mesh is a set of separately closed shells.",
+ "files": {
+  "head": "head.glb",
+  "hand": "hand.glb",
+  "torso": "torso.glb",
+  "nerves": "nerves.glb",
+  "muscles": "muscles.glb"
+ },
+ "skinCutZ": 1341.16,
+ "muscleInventory": {
+  "included": [
+   "muscle_platysma",
+   "muscle_sternocleidomastoid",
+   "muscle_digastric",
+   "muscle_stylohyoid",
+   "muscle_mylohyoid",
+   "muscle_geniohyoid",
+   "muscle_omohyoid",
+   "muscle_sternohyoid",
+   "muscle_sternothyroid",
+   "muscle_thyrohyoid",
+   "muscle_scalenus_anterior",
+   "muscle_scalenus_medius",
+   "muscle_scalenus_posterior",
+   "muscle_longus_capitis",
+   "muscle_longus_colli",
+   "muscle_levator_scapulae",
+   "muscle_superior_rectus",
+   "muscle_inferior_rectus",
+   "muscle_medial_rectus",
+   "muscle_lateral_rectus",
+   "muscle_superior_oblique",
+   "muscle_inferior_oblique",
+   "muscle_levator_palpebrae_superioris"
+  ],
+  "absentFromBodyParts3D": [
+   "masseter",
+   "temporalis",
+   "medial/lateral pterygoid",
+   "buccinator",
+   "orbicularis oculi",
+   "orbicularis oris",
+   "occipitofrontalis/frontalis",
+   "zygomaticus major/minor",
+   "levator labii superioris",
+   "levator anguli oris",
+   "depressor anguli oris",
+   "depressor labii inferioris",
+   "mentalis",
+   "nasalis",
+   "procerus",
+   "corrugator supercilii",
+   "risorius",
+   "auricular muscles"
+  ],
+  "note": "BodyParts3D 4.0 \"muscle of face\" (FMA46751) contains only the extra-ocular muscles; no muscles of facial expression or mastication exist in the dataset. Right longus colli is missing (left parts only). The facial-expression and masticatory muscles are provided separately in muscles.glb from BodyParts3D 3.0 (see \"muscles\").",
+  "inMusclesGlb": [
+   "muscle_masseter",
+   "muscle_temporalis",
+   "muscle_medial_pterygoid",
+   "muscle_lateral_pterygoid",
+   "muscle_buccinator",
+   "muscle_orbicularis_oculi",
+   "muscle_orbicularis_oris",
+   "muscle_frontalis",
+   "muscle_occipitalis",
+   "muscle_temporoparietalis",
+   "muscle_procerus",
+   "muscle_nasalis",
+   "muscle_depressor_septi_nasi",
+   "muscle_corrugator_supercilii",
+   "muscle_zygomaticus_major",
+   "muscle_zygomaticus_minor",
+   "muscle_levator_labii_superioris",
+   "muscle_levator_labii_superioris_alaeque_nasi",
+   "muscle_levator_anguli_oris",
+   "muscle_depressor_anguli_oris",
+   "muscle_depressor_labii_inferioris",
+   "muscle_risorius",
+   "muscle_mentalis"
+  ],
+  "notAvailableInEitherRelease": [
+   "auricular muscles (anterior/superior/posterior auricular)",
+   "incisivus labii",
+   "depressor supercilii"
+  ]
+ },
+ "muscles": {
+  "file": "muscles.glb",
+  "source": "BodyParts3D 3.0",
+  "releaseDate": "2011-09-15",
+  "sourceUrl": "https://dbarchive.biosciencedbc.jp/data/bodyparts3d/20110915/",
+  "sourceArchive": "BodyParts3D_3.0_obj_99.zip",
+  "license": "CC BY-SA 2.1 JP",
+  "licenseUrl": "http://creativecommons.org/licenses/by-sa/2.1/jp/deed.en_US",
+  "attribution": "BodyParts3D, Copyright© The Database Center for Life Science licensed by CC Attribution-Share Alike 2.1 Japan",
+  "licenseNote": "Quoted from the 3.0 README_e.html (20110915/, file dated 2017-10-16): \"The license for this database is the license specified in the Creative Commons Attribution-Share Alike 2.1 Japan\" and \"You must distribute any derivative work based on part or whole of the data from this database under this License.\" The current DBCLS licence page (dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html, last updated 2025/02/27) and LATEST/README_e.html state \"The license for this database is specified in the Creative Commons Attribution 4.0 International\" but neither mentions earlier releases, and the download page lists only the 4.0 files. Whether the CC BY 4.0 relicensing covers 3.0 is therefore NOT stated; muscles.glb is labelled with the 3.0 licence (share-alike) to be safe.",
+  "frameRegistration": {
+   "method": "affine ICP (3x4, least squares, 30 iterations, symmetric nearest-vertex correspondences restricted to the same bone) fitted on BodyParts3D 3.0 vs 4.0 skull bones; applied to every 3.0 muscle vertex",
+   "fitParts": [
+    "Frontal bone",
+    "Left parietal bone",
+    "Right parietal bone",
+    "Occipital bone",
+    "Left temporal bone",
+    "Right temporal bone",
+    "Sphenoid bone",
+    "Left maxilla",
+    "Right maxilla",
+    "Left zygomatic bone",
+    "Right zygomatic bone"
+   ],
+   "matrix": [
+    [
+     1.058599,
+     -0.000133,
+     0.000284,
+     -0.414221
+    ],
+    [
+     0.000066,
+     1.059815,
+     -0.000106,
+     15.869833
+    ],
+    [
+     -0.00022,
+     0.000102,
+     1.059322,
+     -99.152909
+    ]
+   ],
+   "uniformScale": 1.05925,
+   "fitResidualMm": [
+    {
+     "part": "Frontal bone",
+     "meanBefore": 3.48,
+     "mean": 0.55,
+     "rms": 0.77,
+     "p95": 1.61
+    },
+    {
+     "part": "Left parietal bone",
+     "meanBefore": 5.43,
+     "mean": 0.5,
+     "rms": 0.76,
+     "p95": 1.41
+    },
+    {
+     "part": "Right parietal bone",
+     "meanBefore": 5.4,
+     "mean": 0.53,
+     "rms": 0.81,
+     "p95": 1.72
+    },
+    {
+     "part": "Occipital bone",
+     "meanBefore": 10.65,
+     "mean": 0.57,
+     "rms": 0.79,
+     "p95": 1.6
+    },
+    {
+     "part": "Left temporal bone",
+     "meanBefore": 5.2,
+     "mean": 0.72,
+     "rms": 0.92,
+     "p95": 1.86
+    },
+    {
+     "part": "Right temporal bone",
+     "meanBefore": 5.3,
+     "mean": 0.72,
+     "rms": 0.93,
+     "p95": 1.87
+    },
+    {
+     "part": "Sphenoid bone",
+     "meanBefore": 4.61,
+     "mean": 0.71,
+     "rms": 0.96,
+     "p95": 1.97
+    },
+    {
+     "part": "Left maxilla",
+     "meanBefore": 4.55,
+     "mean": 0.65,
+     "rms": 0.91,
+     "p95": 1.92
+    },
+    {
+     "part": "Right maxilla",
+     "meanBefore": 4.58,
+     "mean": 0.59,
+     "rms": 0.8,
+     "p95": 1.59
+    },
+    {
+     "part": "Left zygomatic bone",
+     "meanBefore": 5.29,
+     "mean": 0.62,
+     "rms": 0.81,
+     "p95": 1.58
+    },
+    {
+     "part": "Right zygomatic bone",
+     "meanBefore": 5.14,
+     "mean": 0.58,
+     "rms": 0.78,
+     "p95": 1.66
+    }
+   ],
+   "heldOutResidualMm": [
+    {
+     "part": "Mandible",
+     "mean": 0.57,
+     "rms": 0.72,
+     "p95": 1.45
+    },
+    {
+     "part": "Left upper central secondary incisor tooth",
+     "mean": 0.31,
+     "rms": 0.32,
+     "p95": 0.39
+    },
+    {
+     "part": "Right lower first secondary molar tooth",
+     "mean": 0.32,
+     "rms": 0.33,
+     "p95": 0.42
+    },
+    {
+     "part": "Left lower central secondary incisor tooth",
+     "mean": 0.3,
+     "rms": 0.31,
+     "p95": 0.45
+    },
+    {
+     "part": "Right upper first secondary molar tooth",
+     "mean": 0.31,
+     "rms": 0.32,
+     "p95": 0.4
+    },
+    {
+     "part": "Hyoid bone",
+     "mean": 3.13,
+     "rms": 3.66,
+     "p95": 6.06
+    },
+    {
+     "part": "Atlas",
+     "mean": 2.53,
+     "rms": 2.83,
+     "p95": 4.63
+    }
+   ],
+   "rawDifference4minus3": [
+    {
+     "name": "Mandible",
+     "fma": "FMA52748",
+     "centroidDelta": [
+      -0.004,
+      7.451,
+      -12.152
+     ],
+     "bboxMinDelta": [
+      -2.979,
+      5.079,
+      -14.03
+     ],
+     "bboxMaxDelta": [
+      3.041,
+      9.762,
+      -9.37
+     ],
+     "bboxSize3": [
+      100.381,
+      79.295,
+      79.81
+     ],
+     "bboxSize4": [
+      106.4,
+      83.978,
+      84.47
+     ]
+    },
+    {
+     "name": "Left upper central secondary incisor tooth",
+     "fma": "FMA55682",
+     "centroidDelta": [
+      0.243,
+      5.075,
+      -11.838
+     ],
+     "bboxMinDelta": [
+      0.029,
+      4.767,
+      -12.44
+     ],
+     "bboxMaxDelta": [
+      0.498,
+      5.456,
+      -10.97
+     ],
+     "bboxSize3": [
+      8.382,
+      12.19,
+      24.96
+     ],
+     "bboxSize4": [
+      8.851,
+      12.879,
+      26.43
+     ]
+    },
+    {
+     "name": "Right lower first secondary molar tooth",
+     "fma": "FMA55705",
+     "centroidDelta": [
+      -1.343,
+      6.853,
+      -12.568
+     ],
+     "bboxMinDelta": [
+      -1.63,
+      6.418,
+      -13.2
+     ],
+     "bboxMaxDelta": [
+      -0.995,
+      7.248,
+      -12.11
+     ],
+     "bboxSize3": [
+      11.681,
+      14.281,
+      18.63
+     ],
+     "bboxSize4": [
+      12.316,
+      15.111,
+      19.72
+     ]
+    },
+    {
+     "name": "Left lower central secondary incisor tooth",
+     "fma": "FMA57143",
+     "centroidDelta": [
+      0.147,
+      5.496,
+      -12.986
+     ],
+     "bboxMinDelta": [
+      0.023,
+      5.031,
+      -13.83
+     ],
+     "bboxMaxDelta": [
+      0.324,
+      6.04,
+      -12.41
+     ],
+     "bboxSize3": [
+      5.581,
+      17.212,
+      24.05
+     ],
+     "bboxSize4": [
+      5.883,
+      18.221,
+      25.47
+     ]
+    },
+    {
+     "name": "Right upper first secondary molar tooth",
+     "fma": "FMA55698",
+     "centroidDelta": [
+      -1.407,
+      6.687,
+      -11.497
+     ],
+     "bboxMinDelta": [
+      -1.705,
+      6.433,
+      -12.13
+     ],
+     "bboxMaxDelta": [
+      -1.109,
+      7.033,
+      -10.78
+     ],
+     "bboxSize3": [
+      10.964,
+      10.899,
+      23.2
+     ],
+     "bboxSize4": [
+      11.561,
+      11.499,
+      24.55
+     ]
+    },
+    {
+     "name": "Hyoid bone",
+     "fma": "FMA52749",
+     "centroidDelta": [
+      0,
+      6.392,
+      -8.897
+     ],
+     "bboxMinDelta": [
+      2.094,
+      6.632,
+      -8.69
+     ],
+     "bboxMaxDelta": [
+      -2.022,
+      6.39,
+      -9.09
+     ],
+     "bboxSize3": [
+      41.922,
+      34.823,
+      18.89
+     ],
+     "bboxSize4": [
+      37.807,
+      34.581,
+      18.49
+     ]
+    },
+    {
+     "name": "Atlas",
+     "fma": "FMA12519",
+     "centroidDelta": [
+      0.517,
+      12.462,
+      -8.596
+     ],
+     "bboxMinDelta": [
+      0.902,
+      13.236,
+      -8.97
+     ],
+     "bboxMaxDelta": [
+      -1.746,
+      12.642,
+      -9.05
+     ],
+     "bboxSize3": [
+      84.244,
+      47.643,
+      19.3
+     ],
+     "bboxSize4": [
+      81.595,
+      47.048,
+      19.22
+     ]
+    },
+    {
+     "name": "Frontal bone",
+     "fma": "FMA52734",
+     "centroidDelta": [
+      0.035,
+      6.415,
+      -5.344
+     ],
+     "bboxMinDelta": [
+      -3.459,
+      4.875,
+      -8.19
+     ],
+     "bboxMaxDelta": [
+      3.482,
+      8.697,
+      -2.35
+     ],
+     "bboxSize3": [
+      118.354,
+      66.924,
+      103.21
+     ],
+     "bboxSize4": [
+      125.295,
+      70.746,
+      109.05
+     ]
+    }
+   ],
+   "note": "Residuals are nearest-VERTEX distances (upper bound of surface distance; vertex spacing ~1-2 mm). Hyoid and atlas are neck parts that moved independently between releases and are not used."
+  }
+ },
+ "nerveInventory": {
+  "source": "BodyParts3D 4.0 only (no BodyParts3D 3.0 parts used: 3.0 has a subset of the 4.0 nerves - optic nerves, chiasm, optic tracts - and nothing else)",
+  "exported": {
+   "nerve_head": "optic nerves, optic chiasm, optic tracts, superior/inferior branches of the oculomotor nerves, trochlear nerves, ophthalmic nerves and branches (frontal, supra-orbital, supratrochlear, lacrimal, nasociliary, infratrochlear, anterior/posterior ethmoidal, long and short ciliary nerves, nasociliary-ciliary ganglion communicating branches), ciliary ganglia"
+  },
+  "skippedEmpty": {
+   "nerve_cord": "no spinal cord in either release: the BodyParts3D \"spinal cord\" concept (FMA7647) consists only of the element \"Central canal of spinal cord\" (FJ1737, a 2 mm x 13 mm x 35 mm cavity at C1-C2 level), which is not nerve tissue; no roots/rootlets",
+   "nerve_neck": "none of cervical plexus, vagus, phrenic, accessory, hypoglossal, sympathetic trunk/ganglia, recurrent laryngeal exist in 4.0 or 3.0",
+   "nerve_chest": "no thoracic spinal/intercostal nerves, thoracic sympathetic trunk, vagus or phrenic in 4.0 or 3.0",
+   "nerve_arm_l": "no brachial plexus or arm nerves (median, ulnar, radial, musculocutaneous, axillary) in 4.0 or 3.0",
+   "nerve_arm_r": "as nerve_arm_l"
+  },
+  "alsoAbsentInHead": "olfactory, abducens, trigeminal main trunk / maxillary / mandibular divisions, facial, vestibulocochlear, glossopharyngeal, and the head portions of vagus, accessory and hypoglossal nerves"
+ },
+ "meshes": {
+  "cranium": {
+   "file": "head",
+   "triangles": 72928,
+   "vertices": 36469,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -76.189,
+     -190.833,
+     1463.99
+    ],
+    "max": [
+     74.856,
+     18.001,
+     1636.27
+    ]
+   },
+   "centroid": [
+    -0.626,
+    -91.043,
+    1543.808
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.0015,
+      0.9026,
+      0.43047
+     ],
+     [
+      0.01052,
+      -0.43043,
+      0.90256
+     ],
+     [
+      0.99994,
+      0.00588,
+      -0.00884
+     ]
+    ],
+    "min": [
+     -113.162,
+     -81.722,
+     -75.592
+    ],
+    "max": [
+     109.153,
+     89.965,
+     75.486
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3200",
+     "fma": "FMA52734",
+     "name": "Frontal bone"
+    },
+    {
+     "id": "FJ3274",
+     "fma": "FMA52789",
+     "name": "Left parietal bone"
+    },
+    {
+     "id": "FJ3380",
+     "fma": "FMA52788",
+     "name": "Right parietal bone"
+    },
+    {
+     "id": "FJ3309",
+     "fma": "FMA52735",
+     "name": "Occipital bone"
+    },
+    {
+     "id": "FJ3281",
+     "fma": "FMA52739",
+     "name": "Left temporal bone"
+    },
+    {
+     "id": "FJ3386",
+     "fma": "FMA52738",
+     "name": "Right temporal bone"
+    },
+    {
+     "id": "FJ3394",
+     "fma": "FMA52736",
+     "name": "Sphenoid bone"
+    },
+    {
+     "id": "FJ3199",
+     "fma": "FMA52740",
+     "name": "Ethmoid"
+    },
+    {
+     "id": "FJ3269",
+     "fma": "FMA53650",
+     "name": "Left maxilla"
+    },
+    {
+     "id": "FJ3375",
+     "fma": "FMA53649",
+     "name": "Right maxilla"
+    },
+    {
+     "id": "FJ3287",
+     "fma": "FMA52893",
+     "name": "Left zygomatic bone"
+    },
+    {
+     "id": "FJ3392",
+     "fma": "FMA52892",
+     "name": "Right zygomatic bone"
+    },
+    {
+     "id": "FJ3272",
+     "fma": "FMA53648",
+     "name": "Left nasal bone"
+    },
+    {
+     "id": "FJ3378",
+     "fma": "FMA53647",
+     "name": "Right nasal bone"
+    },
+    {
+     "id": "FJ3265",
+     "fma": "FMA53646",
+     "name": "Left lacrimal bone"
+    },
+    {
+     "id": "FJ3371",
+     "fma": "FMA53645",
+     "name": "Right lacrimal bone"
+    },
+    {
+     "id": "FJ3273",
+     "fma": "FMA53656",
+     "name": "Left palatine bone"
+    },
+    {
+     "id": "FJ3379",
+     "fma": "FMA53655",
+     "name": "Right palatine bone"
+    },
+    {
+     "id": "FJ3395",
+     "fma": "FMA9710",
+     "name": "Vomer"
+    },
+    {
+     "id": "FJ3263",
+     "fma": "FMA54738",
+     "name": "Left inferior nasal concha"
+    },
+    {
+     "id": "FJ3369",
+     "fma": "FMA54737",
+     "name": "Right inferior nasal concha"
+    }
+   ],
+   "label": "Cranium (skull excluding mandible, hyoid and teeth)",
+   "sourceTriangles": 121176,
+   "maxSimplifyError": 0.286,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 12,
+    "outputWithinElements": 11,
+    "betweenElements": 24423
+   },
+   "notes": [
+    "FJ3199: dropped 17 degenerate/tiny disconnected component(s) (342 tris)",
+    "FJ3269: simplification retried 28x with jittered/larger target to avoid unresolvable non-manifold edges: 5198 tris vs target 2855",
+    "FJ3375: simplification retried 20x with jittered/larger target to avoid unresolvable non-manifold edges: 3480 tris vs target 2785",
+    "FJ3395: simplification retried 1x with jittered/larger target to avoid unresolvable non-manifold edges: 694 tris vs target 771",
+    "FJ3369: simplification retried 6x with jittered/larger target to avoid unresolvable non-manifold edges: 270 tris vs target 303",
+    "FJ3369: simplification pinched 4 edge(s); resolved by splitting 4 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 11 within elements (source had 12), 24423 between different source elements"
+   ]
+  },
+  "mandible": {
+   "file": "head",
+   "triangles": 5576,
+   "vertices": 2790,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -53.846,
+     -173.832,
+     1421.63
+    ],
+    "max": [
+     52.554,
+     -89.854,
+     1506.1
+    ]
+   },
+   "centroid": [
+    -0.649,
+    -129.631,
+    1458.109
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00005,
+      0.0001
+     ],
+     [
+      -0.00003,
+      0.72925,
+      0.68424
+     ],
+     [
+      -0.00011,
+      -0.68424,
+      0.72925
+     ]
+    ],
+    "min": [
+     -53.195,
+     -52.767,
+     -24.288
+    ],
+    "max": [
+     53.205,
+     59.642,
+     30.25
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3289",
+     "fma": "FMA52748",
+     "name": "Mandible"
+    }
+   ],
+   "label": "Mandible",
+   "sourceTriangles": 5576,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "teeth_upper": {
+   "file": "head",
+   "triangles": 7984,
+   "vertices": 4020,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -31.142,
+     -183.332,
+     1451.69
+    ],
+    "max": [
+     29.886,
+     -134.837,
+     1484.52
+    ]
+   },
+   "centroid": [
+    -0.637,
+    -159.793,
+    1467.814
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00032,
+      -0.00005
+     ],
+     [
+      0.00032,
+      0.95236,
+      0.30497
+     ],
+     [
+      -0.00005,
+      -0.30497,
+      0.95236
+     ]
+    ],
+    "min": [
+     -30.508,
+     -26.372,
+     -12.522
+    ],
+    "max": [
+     30.52,
+     26.23,
+     18.181
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1265",
+     "fma": "FMA55682",
+     "name": "Left upper central secondary incisor tooth"
+    },
+    {
+     "id": "FJ1279",
+     "fma": "FMA55681",
+     "name": "Right upper central secondary incisor tooth"
+    },
+    {
+     "id": "FJ1266",
+     "fma": "FMA55683",
+     "name": "Left upper lateral secondary incisor tooth"
+    },
+    {
+     "id": "FJ1280",
+     "fma": "FMA55680",
+     "name": "Right upper lateral secondary incisor tooth"
+    },
+    {
+     "id": "FJ1267",
+     "fma": "FMA55799",
+     "name": "Left upper secondary canine tooth"
+    },
+    {
+     "id": "FJ1281",
+     "fma": "FMA55798",
+     "name": "Right upper secondary canine tooth"
+    },
+    {
+     "id": "FJ1262",
+     "fma": "FMA55690",
+     "name": "Left upper first secondary premolar tooth"
+    },
+    {
+     "id": "FJ1277",
+     "fma": "FMA55689",
+     "name": "Right upper first secondary premolar tooth"
+    },
+    {
+     "id": "FJ1264",
+     "fma": "FMA55691",
+     "name": "Left upper second secondary premolar tooth"
+    },
+    {
+     "id": "FJ1278",
+     "fma": "FMA55688",
+     "name": "Right upper second secondary premolar tooth"
+    },
+    {
+     "id": "FJ1261",
+     "fma": "FMA55699",
+     "name": "Left upper first secondary molar tooth"
+    },
+    {
+     "id": "FJ1276",
+     "fma": "FMA55698",
+     "name": "Right upper first secondary molar tooth"
+    },
+    {
+     "id": "FJ1263",
+     "fma": "FMA55700",
+     "name": "Left upper second secondary molar tooth"
+    },
+    {
+     "id": "FJ1275",
+     "fma": "FMA55697",
+     "name": "Right upper second secondary molar tooth"
+    }
+   ],
+   "label": "Maxillary teeth (permanent dentition, no third molars)",
+   "sourceTriangles": 22252,
+   "maxSimplifyError": 0.123,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 156
+   },
+   "notes": [
+    "FJ1263: dropped 1 degenerate/tiny disconnected component(s) (4 tris)",
+    "FJ1275: dropped 1 degenerate/tiny disconnected component(s) (12 tris)",
+    "intersecting triangle pairs: 0 within elements (source had 0), 156 between different source elements"
+   ]
+  },
+  "teeth_lower": {
+   "file": "head",
+   "triangles": 7984,
+   "vertices": 4020,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -33.447,
+     -178.497,
+     1427.15
+    ],
+    "max": [
+     32.147,
+     -126.34,
+     1463.17
+    ]
+   },
+   "centroid": [
+    -0.659,
+    -155.181,
+    1447.161
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00014,
+      -0.00003
+     ],
+     [
+      0.00014,
+      0.96035,
+      0.27881
+     ],
+     [
+      -0.00001,
+      -0.27881,
+      0.96035
+     ]
+    ],
+    "min": [
+     -32.792,
+     -21.068,
+     -18.234
+    ],
+    "max": [
+     32.802,
+     28.022,
+     12.412
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1258",
+     "fma": "FMA57143",
+     "name": "Left lower central secondary incisor tooth"
+    },
+    {
+     "id": "FJ1272",
+     "fma": "FMA57142",
+     "name": "Right lower central secondary incisor tooth"
+    },
+    {
+     "id": "FJ1259",
+     "fma": "FMA57141",
+     "name": "Left lower lateral secondary incisor tooth"
+    },
+    {
+     "id": "FJ1273",
+     "fma": "FMA57140",
+     "name": "Right lower lateral secondary incisor tooth"
+    },
+    {
+     "id": "FJ1260",
+     "fma": "FMA55687",
+     "name": "Left lower secondary canine tooth"
+    },
+    {
+     "id": "FJ1274",
+     "fma": "FMA55686",
+     "name": "Right lower secondary canine tooth"
+    },
+    {
+     "id": "FJ1255",
+     "fma": "FMA55693",
+     "name": "Left lower first secondary premolar tooth"
+    },
+    {
+     "id": "FJ1269",
+     "fma": "FMA55694",
+     "name": "Right lower first secondary premolar tooth"
+    },
+    {
+     "id": "FJ1257",
+     "fma": "FMA55692",
+     "name": "Left lower second secondary premolar tooth"
+    },
+    {
+     "id": "FJ1271",
+     "fma": "FMA55695",
+     "name": "Right lower second secondary premolar tooth"
+    },
+    {
+     "id": "FJ1254",
+     "fma": "FMA55704",
+     "name": "Left lower first secondary molar tooth"
+    },
+    {
+     "id": "FJ1268",
+     "fma": "FMA55705",
+     "name": "Right lower first secondary molar tooth"
+    },
+    {
+     "id": "FJ1256",
+     "fma": "FMA55703",
+     "name": "Left lower second secondary molar tooth"
+    },
+    {
+     "id": "FJ1270",
+     "fma": "FMA55706",
+     "name": "Right lower second secondary molar tooth"
+    }
+   ],
+   "label": "Mandibular teeth (permanent dentition, no third molars)",
+   "sourceTriangles": 17476,
+   "maxSimplifyError": 0.098,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 342
+   },
+   "notes": [
+    "intersecting triangle pairs: 0 within elements (source had 0), 342 between different source elements"
+   ]
+  },
+  "hyoid": {
+   "file": "head",
+   "triangles": 1000,
+   "vertices": 502,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -19.524,
+     -129,
+     1422.37
+    ],
+    "max": [
+     18.251,
+     -94.435,
+     1440.86
+    ]
+   },
+   "centroid": [
+    -0.624,
+    -116.148,
+    1430.424
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00103,
+      0.00064
+     ],
+     [
+      -0.00119,
+      0.94318,
+      0.33228
+     ],
+     [
+      -0.00026,
+      -0.33228,
+      0.94318
+     ]
+    ],
+    "min": [
+     -18.875,
+     -12.479,
+     -5.339
+    ],
+    "max": [
+     18.902,
+     23.571,
+     6.965
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ2772",
+     "fma": "FMA52749",
+     "name": "Hyoid bone"
+    }
+   ],
+   "label": "Hyoid bone",
+   "sourceTriangles": 1196,
+   "maxSimplifyError": 0.08,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "skipped FJ3201 (geometrically identical duplicate of FJ2772)"
+   ]
+  },
+  "c1": {
+   "file": "head",
+   "triangles": 2094,
+   "vertices": 1043,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -41.365,
+     -87.644,
+     1462.21
+    ],
+    "max": [
+     40.231,
+     -40.596,
+     1481.43
+    ]
+   },
+   "centroid": [
+    -0.7,
+    -68.097,
+    1470.998
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00124,
+      0.00033
+     ],
+     [
+      0.00127,
+      0.99327,
+      -0.11583
+     ],
+     [
+      -0.00019,
+      0.11583,
+      0.99327
+     ]
+    ],
+    "min": [
+     -40.663,
+     -19.255,
+     -9.114
+    ],
+    "max": [
+     40.932,
+     27.685,
+     9.065
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3176",
+     "fma": "FMA12519",
+     "name": "Atlas"
+    }
+   ],
+   "label": "Atlas (C1)",
+   "sourceTriangles": 2094,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "c2": {
+   "file": "head",
+   "triangles": 2288,
+   "vertices": 1140,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -25.962,
+     -86.539,
+     1433.17
+    ],
+    "max": [
+     24.574,
+     -36.671,
+     1478.35
+    ]
+   },
+   "centroid": [
+    -0.684,
+    -66.635,
+    1452.372
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.01297,
+      0.84307,
+      -0.53764
+     ],
+     [
+      0.99992,
+      0.01107,
+      -0.00677
+     ],
+     [
+      -0.00025,
+      0.53769,
+      0.84314
+     ]
+    ],
+    "min": [
+     -23.036,
+     -25.299,
+     -15.334
+    ],
+    "max": [
+     34.77,
+     25.237,
+     18.488
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3177",
+     "fma": "FMA12520",
+     "name": "Axis"
+    }
+   ],
+   "label": "Axis (C2)",
+   "sourceTriangles": 2288,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "c3": {
+   "file": "head",
+   "triangles": 2030,
+   "vertices": 1011,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -29.843,
+     -87.813,
+     1417
+    ],
+    "max": [
+     28.539,
+     -38.133,
+     1445.74
+    ]
+   },
+   "centroid": [
+    -0.654,
+    -68.076,
+    1434.335
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00165,
+      -0.00164
+     ],
+     [
+      -0.00216,
+      0.92268,
+      -0.38556
+     ],
+     [
+      0.00088,
+      0.38556,
+      0.92268
+     ]
+    ],
+    "min": [
+     -29.201,
+     -20.518,
+     -10.212
+    ],
+    "max": [
+     29.181,
+     33.711,
+     9.885
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3161",
+     "fma": "FMA12521",
+     "name": "Third cervical vertebra"
+    }
+   ],
+   "label": "Third cervical vertebra (C3)",
+   "sourceTriangles": 2030,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "c4": {
+   "file": "head",
+   "triangles": 2410,
+   "vertices": 1201,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -27.753,
+     -89.108,
+     1404.6
+    ],
+    "max": [
+     26.378,
+     -40.694,
+     1432.14
+    ]
+   },
+   "centroid": [
+    -0.657,
+    -69.866,
+    1420.18
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00006,
+      0.00073
+     ],
+     [
+      0.00031,
+      0.93956,
+      -0.34239
+     ],
+     [
+      -0.00067,
+      0.34239,
+      0.93956
+     ]
+    ],
+    "min": [
+     -27.096,
+     -19.728,
+     -10.535
+    ],
+    "max": [
+     27.034,
+     32.265,
+     10.48
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3164",
+     "fma": "FMA12522",
+     "name": "Fourth cervical vertebra"
+    }
+   ],
+   "label": "Fourth cervical vertebra (C4)",
+   "sourceTriangles": 2410,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "c5": {
+   "file": "head",
+   "triangles": 2196,
+   "vertices": 1094,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -29.698,
+     -90.773,
+     1393.77
+    ],
+    "max": [
+     28.333,
+     -36.083,
+     1417.99
+    ]
+   },
+   "centroid": [
+    -0.695,
+    -71.684,
+    1406.128
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99998,
+      0.0057,
+      -0.00069
+     ],
+     [
+      -0.00572,
+      0.98115,
+      -0.19316
+     ],
+     [
+      -0.00043,
+      0.19316,
+      0.98117
+     ]
+    ],
+    "min": [
+     -29.041,
+     -19.021,
+     -12.028
+    ],
+    "max": [
+     28.988,
+     37.043,
+     10.888
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3167",
+     "fma": "FMA12523",
+     "name": "Fifth cervical vertebra"
+    }
+   ],
+   "label": "Fifth cervical vertebra (C5)",
+   "sourceTriangles": 2196,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "c6": {
+   "file": "head",
+   "triangles": 2374,
+   "vertices": 1183,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -31.265,
+     -91.671,
+     1381.59
+    ],
+    "max": [
+     29.948,
+     -29.179,
+     1404.74
+    ]
+   },
+   "centroid": [
+    -0.662,
+    -70.205,
+    1391.852
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99704,
+      -0.07679,
+      0.00276
+     ],
+     [
+      0.07682,
+      0.99548,
+      -0.05583
+     ],
+     [
+      0.00154,
+      0.05588,
+      0.99844
+     ]
+    ],
+    "min": [
+     -29.969,
+     -21.398,
+     -10.71
+    ],
+    "max": [
+     31.055,
+     41.204,
+     12.691
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3170",
+     "fma": "FMA12524",
+     "name": "Sixth cervical vertebra"
+    }
+   ],
+   "label": "Sixth cervical vertebra (C6)",
+   "sourceTriangles": 2374,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "c7": {
+   "file": "head",
+   "triangles": 1820,
+   "vertices": 906,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -33.229,
+     -90.032,
+     1364.71
+    ],
+    "max": [
+     31.932,
+     -21.266,
+     1391.84
+    ]
+   },
+   "centroid": [
+    -0.592,
+    -63.403,
+    1377.435
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00558,
+      0.995,
+      -0.09975
+     ],
+     [
+      0.99998,
+      0.00542,
+      -0.00187
+     ],
+     [
+      0.00132,
+      0.09976,
+      0.99501
+     ]
+    ],
+    "min": [
+     -26.46,
+     -32.689,
+     -13.367
+    ],
+    "max": [
+     42.845,
+     32.471,
+     13.806
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3172",
+     "fma": "FMA12525",
+     "name": "Seventh cervical vertebra"
+    }
+   ],
+   "label": "Seventh cervical vertebra (C7)",
+   "sourceTriangles": 1820,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "cerebrum": {
+   "file": "head",
+   "triangles": 40130,
+   "vertices": 20109,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -71.15,
+     -169.677,
+     1513.5
+    ],
+    "max": [
+     69.699,
+     10.329,
+     1630.46
+    ]
+   },
+   "centroid": [
+    -0.679,
+    -74.007,
+    1571.215
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.00009,
+      0.99269,
+      -0.12067
+     ],
+     [
+      1,
+      -0.00015,
+      -0.00051
+     ],
+     [
+      0.00052,
+      0.12067,
+      0.99269
+     ]
+    ],
+    "min": [
+     -94.767,
+     -70.467,
+     -60.427
+    ],
+    "max": [
+     87.396,
+     70.379,
+     59.73
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1833",
+     "fma": "FMA72654",
+     "name": "Left superior frontal gyrus"
+    },
+    {
+     "id": "FJ1834",
+     "fma": "FMA72653",
+     "name": "Right superior frontal gyrus"
+    },
+    {
+     "id": "FJ1787",
+     "fma": "FMA72656",
+     "name": "Left middle frontal gyrus"
+    },
+    {
+     "id": "FJ1788",
+     "fma": "FMA72655",
+     "name": "Right middle frontal gyrus"
+    },
+    {
+     "id": "FJ1744",
+     "fma": "FMA72658",
+     "name": "Left inferior frontal gyrus"
+    },
+    {
+     "id": "FJ1745",
+     "fma": "FMA72657",
+     "name": "Right inferior frontal gyrus"
+    },
+    {
+     "id": "FJ1800",
+     "fma": "FMA72662",
+     "name": "Left precentral gyrus"
+    },
+    {
+     "id": "FJ1801",
+     "fma": "FMA72661",
+     "name": "Right precentral gyrus"
+    },
+    {
+     "id": "FJ1797",
+     "fma": "FMA72666",
+     "name": "Left postcentral gyrus"
+    },
+    {
+     "id": "FJ1798",
+     "fma": "FMA72665",
+     "name": "Right postcentral gyrus"
+    },
+    {
+     "id": "FJ1835",
+     "fma": "FMA72672",
+     "name": "Left superior parietal lobule"
+    },
+    {
+     "id": "FJ1836",
+     "fma": "FMA72671",
+     "name": "Right superior parietal lobule"
+    },
+    {
+     "id": "FJ1841",
+     "fma": "FMA72668",
+     "name": "Left supramarginal gyrus"
+    },
+    {
+     "id": "FJ1842",
+     "fma": "FMA72667",
+     "name": "Right supramarginal gyrus"
+    },
+    {
+     "id": "FJ1732",
+     "fma": "FMA72670",
+     "name": "Left angular gyrus"
+    },
+    {
+     "id": "FJ1733",
+     "fma": "FMA72669",
+     "name": "Right angular gyrus"
+    },
+    {
+     "id": "FJ1791",
+     "fma": "FMA72976",
+     "name": "Left occipital lobe"
+    },
+    {
+     "id": "FJ1792",
+     "fma": "FMA72975",
+     "name": "Right occipital lobe"
+    },
+    {
+     "id": "FJ1837",
+     "fma": "FMA72801",
+     "name": "Anterior part of left superior temporal gyrus"
+    },
+    {
+     "id": "FJ1838",
+     "fma": "FMA72800",
+     "name": "Anterior part of right superior temporal gyrus"
+    },
+    {
+     "id": "FJ1839",
+     "fma": "FMA72805",
+     "name": "Posterior part of left superior temporal gyrus"
+    },
+    {
+     "id": "FJ1840",
+     "fma": "FMA72804",
+     "name": "Posterior part of right superior temporal gyrus"
+    },
+    {
+     "id": "FJ1789",
+     "fma": "FMA72686",
+     "name": "Left middle temporal gyrus"
+    },
+    {
+     "id": "FJ1790",
+     "fma": "FMA72685",
+     "name": "Right middle temporal gyrus"
+    },
+    {
+     "id": "FJ1746",
+     "fma": "FMA72688",
+     "name": "Left inferior temporal gyrus"
+    },
+    {
+     "id": "FJ1747",
+     "fma": "FMA72687",
+     "name": "Right inferior temporal gyrus"
+    },
+    {
+     "id": "FJ1783",
+     "fma": "FMA72690",
+     "name": "Left fusiform gyrus"
+    },
+    {
+     "id": "FJ1784",
+     "fma": "FMA72689",
+     "name": "Right fusiform gyrus"
+    },
+    {
+     "id": "FJ1785",
+     "fma": "FMA72706",
+     "name": "Left parahippocampal gyrus"
+    },
+    {
+     "id": "FJ1786",
+     "fma": "FMA72705",
+     "name": "Right parahippocampal gyrus"
+    },
+    {
+     "id": "FJ1739",
+     "fma": "FMA72718",
+     "name": "Left cingulate gyrus"
+    },
+    {
+     "id": "FJ1740",
+     "fma": "FMA72717",
+     "name": "Right cingulate gyrus"
+    },
+    {
+     "id": "FJ1748",
+     "fma": "FMA72978",
+     "name": "Left insula"
+    },
+    {
+     "id": "FJ1749",
+     "fma": "FMA72977",
+     "name": "Right insula"
+    },
+    {
+     "id": "FJ1793",
+     "fma": "FMA256194",
+     "name": "Orbital gyrus"
+    },
+    {
+     "id": "FJ1794",
+     "fma": "FMA256194",
+     "name": "Orbital gyrus"
+    },
+    {
+     "id": "FJ1758",
+     "fma": "FMA260794",
+     "name": "White matter of left cerebral hemisphere"
+    },
+    {
+     "id": "FJ1806",
+     "fma": "FMA260791",
+     "name": "White matter of right cerebral hemisphere"
+    }
+   ],
+   "label": "Cerebrum (cortical gyri/lobes + hemispheric white matter core)",
+   "sourceTriangles": 164282,
+   "maxSimplifyError": 0.599,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 1,
+    "outputWithinElements": 2,
+    "betweenElements": 25778
+   },
+   "notes": [
+    "FJ1758: dropped 2 degenerate/tiny disconnected component(s) (10 tris)",
+    "FJ1793: simplification retried 5x with jittered/larger target to avoid unresolvable non-manifold edges: 596 tris vs target 663",
+    "FJ1758: simplification pinched 0 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)",
+    "FJ1806: simplification pinched 1 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 2 within elements (source had 1), 25778 between different source elements"
+   ]
+  },
+  "cerebellum": {
+   "file": "head",
+   "triangles": 9998,
+   "vertices": 5003,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -53.9,
+     -68.466,
+     1487.26
+    ],
+    "max": [
+     52.608,
+     -12.205,
+     1540.5
+    ]
+   },
+   "centroid": [
+    -0.653,
+    -42.127,
+    1511.48
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00015,
+      -0.00003
+     ],
+     [
+      0.00015,
+      0.99299,
+      -0.11823
+     ],
+     [
+      0.00005,
+      0.11823,
+      0.99299
+     ]
+    ],
+    "min": [
+     -53.247,
+     -26.846,
+     -24.676
+    ],
+    "max": [
+     53.262,
+     30.324,
+     28.783
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1781",
+     "fma": "FMA67944",
+     "name": "Cerebellum"
+    },
+    {
+     "id": "FJ1830",
+     "fma": "FMA67944",
+     "name": "Cerebellum"
+    }
+   ],
+   "label": "Cerebellum",
+   "sourceTriangles": 47700,
+   "maxSimplifyError": 0.12,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 1,
+    "betweenElements": 0
+   },
+   "notes": [
+    "intersecting triangle pairs: 1 within elements (source had 0), 0 between different source elements"
+   ]
+  },
+  "brainstem": {
+   "file": "head",
+   "triangles": 4544,
+   "vertices": 2300,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -21.869,
+     -99.227,
+     1464.55
+    ],
+    "max": [
+     20.563,
+     -51.281,
+     1545.78
+    ]
+   },
+   "centroid": [
+    -0.662,
+    -77.055,
+    1517.235
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00077,
+      -0.36784,
+      0.92989
+     ],
+     [
+      1,
+      -0.00147,
+      0.00025
+     ],
+     [
+      0.00128,
+      0.92989,
+      0.36784
+     ]
+    ],
+    "min": [
+     -58.388,
+     -21.19,
+     -15.484
+    ],
+    "max": [
+     34.692,
+     21.241,
+     18.345
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1770",
+     "fma": "FMA61993",
+     "name": "Midbrain"
+    },
+    {
+     "id": "FJ1817",
+     "fma": "FMA61993",
+     "name": "Midbrain"
+    },
+    {
+     "id": "FJ1774",
+     "fma": "FMA62394",
+     "name": "Peduncle of midbrain"
+    },
+    {
+     "id": "FJ1821",
+     "fma": "FMA62394",
+     "name": "Peduncle of midbrain"
+    },
+    {
+     "id": "FJ1779",
+     "fma": "FMA73423",
+     "name": "Left superior colliculus"
+    },
+    {
+     "id": "FJ1826",
+     "fma": "FMA73422",
+     "name": "Right superior colliculus"
+    },
+    {
+     "id": "FJ1762",
+     "fma": "FMA73435",
+     "name": "Left inferior colliculus"
+    },
+    {
+     "id": "FJ1810",
+     "fma": "FMA73434",
+     "name": "Right inferior colliculus"
+    },
+    {
+     "id": "FJ1775",
+     "fma": "FMA67943",
+     "name": "Pons"
+    },
+    {
+     "id": "FJ1822",
+     "fma": "FMA67943",
+     "name": "Pons"
+    },
+    {
+     "id": "FJ1769",
+     "fma": "FMA62004",
+     "name": "Medulla oblongata"
+    },
+    {
+     "id": "FJ1831",
+     "fma": "FMA62004",
+     "name": "Medulla oblongata"
+    }
+   ],
+   "label": "Brainstem (midbrain incl. cerebral peduncles and colliculi, pons, medulla oblongata)",
+   "sourceTriangles": 57060,
+   "maxSimplifyError": 0.221,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 4,
+    "outputWithinElements": 2,
+    "betweenElements": 1545
+   },
+   "notes": [
+    "FJ1774: dropped 2 degenerate/tiny disconnected component(s) (24 tris)",
+    "FJ1821: dropped 1 degenerate/tiny disconnected component(s) (12 tris)",
+    "FJ1775: dropped 1 degenerate/tiny disconnected component(s) (8 tris)",
+    "FJ1822: dropped 2 degenerate/tiny disconnected component(s) (4 tris)",
+    "FJ1822: simplification pinched 3 edge(s); resolved by splitting 5 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 2 within elements (source had 4), 1545 between different source elements"
+   ]
+  },
+  "eye_l": {
+   "file": "head",
+   "triangles": 1280,
+   "vertices": 642,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     16.015,
+     -166.041,
+     1504.982
+    ],
+    "max": [
+     42.287,
+     -138.83,
+     1531.165
+    ]
+   },
+   "centroid": [
+    29.157,
+    -152.048,
+    1518.074
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.04556,
+      0.99866,
+      0.02462
+     ],
+     [
+      0.99783,
+      0.04667,
+      -0.04642
+     ],
+     [
+      0.04751,
+      -0.02245,
+      0.99862
+     ]
+    ],
+    "min": [
+     -13.974,
+     -13.151,
+     -13.094
+    ],
+    "max": [
+     13.201,
+     13.143,
+     13.079
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1317",
+     "fma": "FMA58272",
+     "name": "Left sclera"
+    },
+    {
+     "id": "FJ1289",
+     "fma": "FMA58240",
+     "name": "Left cornea"
+    },
+    {
+     "id": "FJ1331",
+     "fma": "FMA58829",
+     "name": "Left vitreous body"
+    },
+    {
+     "id": "FJ1305",
+     "fma": "FMA58243",
+     "name": "Left lens"
+    },
+    {
+     "id": "FJ1282",
+     "fma": "FMA58082",
+     "name": "Anterior chamber of left eyeball"
+    },
+    {
+     "id": "FJ1285",
+     "fma": "FMA58300",
+     "name": "Left choroid"
+    },
+    {
+     "id": "FJ1286",
+     "fma": "FMA58300",
+     "name": "Left choroid"
+    },
+    {
+     "id": "FJ1316",
+     "fma": "FMA58608",
+     "name": "Optic part of left retina"
+    }
+   ],
+   "label": "Left eyeball (subject's left)",
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": null,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "radial outer envelope (icosphere level 3, 1280 tris) of 8 eye elements around sclera bbox centre 29.15,-151.142,1518.075; radius 12.31–14.90 mm"
+   ]
+  },
+  "eye_r": {
+   "file": "head",
+   "triangles": 1280,
+   "vertices": 642,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -43.596,
+     -166.04,
+     1504.984
+    ],
+    "max": [
+     -17.324,
+     -138.83,
+     1531.165
+    ]
+   },
+   "centroid": [
+    -30.468,
+    -152.048,
+    1518.073
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.04681,
+      0.99859,
+      0.02489
+     ],
+     [
+      0.99793,
+      -0.04785,
+      0.04303
+     ],
+     [
+      -0.04416,
+      -0.02282,
+      0.99876
+     ]
+    ],
+    "min": [
+     -13.972,
+     -13.145,
+     -13.094
+    ],
+    "max": [
+     13.2,
+     13.148,
+     13.086
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1368",
+     "fma": "FMA58271",
+     "name": "Right sclera"
+    },
+    {
+     "id": "FJ1340",
+     "fma": "FMA58239",
+     "name": "Right cornea"
+    },
+    {
+     "id": "FJ1382",
+     "fma": "FMA58828",
+     "name": "Right vitreous body"
+    },
+    {
+     "id": "FJ1356",
+     "fma": "FMA58242",
+     "name": "Right lens"
+    },
+    {
+     "id": "FJ1332",
+     "fma": "FMA58081",
+     "name": "Anterior chamber of right eyeball"
+    },
+    {
+     "id": "FJ1336",
+     "fma": "FMA58299",
+     "name": "Right choroid"
+    },
+    {
+     "id": "FJ1337",
+     "fma": "FMA58299",
+     "name": "Right choroid"
+    },
+    {
+     "id": "FJ1367",
+     "fma": "FMA58607",
+     "name": "Optic part of right retina"
+    }
+   ],
+   "label": "Right eyeball (subject's right)",
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": null,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1368: dropped 10 degenerate/tiny disconnected component(s) (30 tris)",
+    "FJ1340: dropped 17 degenerate/tiny disconnected component(s) (54 tris)",
+    "FJ1337: dropped 7 degenerate/tiny disconnected component(s) (20 tris)",
+    "radial outer envelope (icosphere level 3, 1280 tris) of 8 eye elements around sclera bbox centre -30.458,-151.147,1518.075; radius 12.32–14.89 mm"
+   ]
+  },
+  "muscle_platysma": {
+   "file": "head",
+   "triangles": 9048,
+   "vertices": 4529,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -147.036,
+     -173.535,
+     1319.39
+    ],
+    "max": [
+     145.68,
+     -49.804,
+     1468.18
+    ]
+   },
+   "centroid": [
+    -0.678,
+    -111.424,
+    1380.734
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00013,
+      0.00028
+     ],
+     [
+      -0.00031,
+      -0.39049,
+      0.92061
+     ],
+     [
+      0.00001,
+      0.92061,
+      0.39049
+     ]
+    ],
+    "min": [
+     -146.371,
+     -49.065,
+     -58.166
+    ],
+    "max": [
+     146.345,
+     82.577,
+     46.8
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1558",
+     "fma": "FMA45740",
+     "name": "Left platysma"
+    },
+    {
+     "id": "FJ1587",
+     "fma": "FMA45739",
+     "name": "Right platysma"
+    }
+   ],
+   "label": "Platysma",
+   "sourceTriangles": 27176,
+   "maxSimplifyError": 0.253,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 1,
+    "outputWithinElements": 0,
+    "betweenElements": 436
+   },
+   "notes": [
+    "FJ1558: simplification retried 7x with jittered/larger target to avoid unresolvable non-manifold edges: 4494 tris vs target 4997",
+    "FJ1587: simplification retried 16x with jittered/larger target to avoid unresolvable non-manifold edges: 4554 tris vs target 5063",
+    "FJ1587: simplification pinched 2 edge(s); resolved by splitting 5 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 0 within elements (source had 1), 436 between different source elements"
+   ]
+  },
+  "muscle_sternocleidomastoid": {
+   "file": "head",
+   "triangles": 6986,
+   "vertices": 3503,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -63.04,
+     -156.907,
+     1301.99
+    ],
+    "max": [
+     61.613,
+     -37.33,
+     1503.19
+    ]
+   },
+   "centroid": [
+    -0.676,
+    -104.213,
+    1402.034
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00054,
+      0.43157,
+      0.90208
+     ],
+     [
+      1,
+      0.00039,
+      0.00041
+     ],
+     [
+      -0.00018,
+      0.90208,
+      -0.43157
+     ]
+    ],
+    "min": [
+     -111.959,
+     -62.31,
+     -15.268
+    ],
+    "max": [
+     118.511,
+     62.343,
+     19.523
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1573",
+     "fma": "FMA13409",
+     "name": "Left sternocleidomastoid"
+    },
+    {
+     "id": "FJ1595",
+     "fma": "FMA13408",
+     "name": "Right sternocleidomastoid"
+    }
+   ],
+   "label": "Sternocleidomastoid",
+   "sourceTriangles": 20556,
+   "maxSimplifyError": 0.397,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 1,
+    "outputWithinElements": 2,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1595: dropped 3 degenerate/tiny disconnected component(s) (12 tris)",
+    "FJ1595: simplification retried 6x with jittered/larger target to avoid unresolvable non-manifold edges: 4630 tris vs target 2365",
+    "FJ1595: simplification pinched 2 edge(s); resolved by splitting 6 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 2 within elements (source had 1), 0 between different source elements"
+   ]
+  },
+  "muscle_digastric": {
+   "file": "head",
+   "triangles": 1184,
+   "vertices": 603,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -57.611,
+     -158.504,
+     1428.6
+    ],
+    "max": [
+     56.043,
+     -66.212,
+     1495.04
+    ]
+   },
+   "centroid": [
+    -1.04,
+    -104.48,
+    1458.069
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.36185,
+      0.70996,
+      0.60417
+     ],
+     [
+      0.93222,
+      0.2793,
+      0.23012
+     ],
+     [
+      0.00537,
+      -0.64649,
+      0.7629
+     ]
+    ],
+    "min": [
+     -56.797,
+     -35.555,
+     -10.778
+    ],
+    "max": [
+     69.138,
+     71.965,
+     15.525
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1555",
+     "fma": "FMA46293",
+     "name": "Left digastric"
+    },
+    {
+     "id": "FJ1560",
+     "fma": "FMA46293",
+     "name": "Left digastric"
+    },
+    {
+     "id": "FJ1578",
+     "fma": "FMA46293",
+     "name": "Left digastric"
+    },
+    {
+     "id": "FJ1556",
+     "fma": "FMA46292",
+     "name": "Right digastric"
+    },
+    {
+     "id": "FJ1579",
+     "fma": "FMA46292",
+     "name": "Right digastric"
+    },
+    {
+     "id": "FJ1581",
+     "fma": "FMA258850",
+     "name": "Right intermediate tendon"
+    }
+   ],
+   "label": "Digastric (incl. intermediate tendon)",
+   "sourceTriangles": 6690,
+   "maxSimplifyError": 0.292,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 3,
+    "outputWithinElements": 0,
+    "betweenElements": 160
+   },
+   "notes": [
+    "FJ1578: dropped 1 degenerate/tiny disconnected component(s) (2 tris)",
+    "FJ1556: dropped 1 degenerate/tiny disconnected component(s) (2 tris)",
+    "FJ1579: dropped 3 degenerate/tiny disconnected component(s) (8 tris)",
+    "FJ1581: dropped 1 degenerate/tiny disconnected component(s) (2 tris)",
+    "FJ1560: simplification pinched 1 edge(s); resolved by splitting 1 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 0 within elements (source had 3), 160 between different source elements"
+   ]
+  },
+  "muscle_stylohyoid": {
+   "file": "head",
+   "triangles": 312,
+   "vertices": 164,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -40.708,
+     -124.27,
+     1429.71
+    ],
+    "max": [
+     39.297,
+     -85.001,
+     1489.83
+    ]
+   },
+   "centroid": [
+    -0.669,
+    -106.491,
+    1455.972
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99999,
+      -0.00232,
+      -0.0027
+     ],
+     [
+      0.00355,
+      0.58742,
+      0.80927
+     ],
+     [
+      0.00029,
+      0.80928,
+      -0.58743
+     ]
+    ],
+    "min": [
+     -40.166,
+     -31.654,
+     -2.974
+    ],
+    "max": [
+     39.843,
+     40.111,
+     4.112
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1576",
+     "fma": "FMA45827",
+     "name": "Left stylohyoid"
+    },
+    {
+     "id": "FJ1598",
+     "fma": "FMA45826",
+     "name": "Right stylohyoid"
+    }
+   ],
+   "label": "Stylohyoid",
+   "sourceTriangles": 2478,
+   "maxSimplifyError": 0.349,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1576: dropped 2 degenerate/tiny disconnected component(s) (4 tris)",
+    "FJ1598: dropped 1 degenerate/tiny disconnected component(s) (2 tris)",
+    "FJ1598: simplification pinched 0 edge(s); resolved by splitting 4 vertices (duplicate positions, zero-thickness contact remains)"
+   ]
+  },
+  "muscle_mylohyoid": {
+   "file": "head",
+   "triangles": 520,
+   "vertices": 264,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -26.72,
+     -158.762,
+     1431.62
+    ],
+    "max": [
+     25.461,
+     -122.195,
+     1455.88
+    ]
+   },
+   "centroid": [
+    -0.695,
+    -137.772,
+    1437.75
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99999,
+      -0.00292,
+      -0.00414
+     ],
+     [
+      0.00388,
+      0.96696,
+      0.25491
+     ],
+     [
+      0.00325,
+      -0.25493,
+      0.96695
+     ]
+    ],
+    "min": [
+     -26.133,
+     -21.626,
+     -9.681
+    ],
+    "max": [
+     26.048,
+     16.066,
+     14.672
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1562",
+     "fma": "FMA46322",
+     "name": "Left mylohyoid"
+    },
+    {
+     "id": "FJ1583",
+     "fma": "FMA46321",
+     "name": "Right mylohyoid"
+    }
+   ],
+   "label": "Mylohyoid",
+   "sourceTriangles": 3894,
+   "maxSimplifyError": 0.319,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_geniohyoid": {
+   "file": "head",
+   "triangles": 200,
+   "vertices": 104,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -8.342,
+     -160.175,
+     1423.05
+    ],
+    "max": [
+     6.87,
+     -120.963,
+     1436.9
+    ]
+   },
+   "centroid": [
+    -0.641,
+    -137.938,
+    1431.761
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00171,
+      0.95673,
+      -0.29097
+     ],
+     [
+      0.99999,
+      0.00056,
+      -0.00405
+     ],
+     [
+      0.00372,
+      0.29098,
+      0.95672
+     ]
+    ],
+    "min": [
+     -22.436,
+     -7.692,
+     -4.161
+    ],
+    "max": [
+     18.306,
+     7.515,
+     3.15
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1559",
+     "fma": "FMA46327",
+     "name": "Left geniohyoid"
+    },
+    {
+     "id": "FJ1580",
+     "fma": "FMA46326",
+     "name": "Right geniohyoid"
+    }
+   ],
+   "label": "Geniohyoid",
+   "sourceTriangles": 1460,
+   "maxSimplifyError": 0.366,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_omohyoid": {
+   "file": "head",
+   "triangles": 1480,
+   "vertices": 748,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -105.812,
+     -122.216,
+     1317.94
+    ],
+    "max": [
+     104.51,
+     -26.392,
+     1427.23
+    ]
+   },
+   "centroid": [
+    -0.925,
+    -78.694,
+    1362.059
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00116,
+      0.0015
+     ],
+     [
+      -0.00189,
+      -0.68441,
+      0.7291
+     ],
+     [
+      -0.00019,
+      0.7291,
+      0.68441
+     ]
+    ],
+    "min": [
+     -105.004,
+     -67.017,
+     -16.231
+    ],
+    "max": [
+     105.319,
+     76.114,
+     17.493
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1565",
+     "fma": "FMA13349",
+     "name": "Left omohyoid"
+    },
+    {
+     "id": "FJ1586",
+     "fma": "FMA13348",
+     "name": "Right omohyoid"
+    }
+   ],
+   "label": "Omohyoid",
+   "sourceTriangles": 10768,
+   "maxSimplifyError": 0.319,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1586: dropped 1 degenerate/tiny disconnected component(s) (4 tris)",
+    "FJ1565: simplification retried 8x with jittered/larger target to avoid unresolvable non-manifold edges: 616 tris vs target 685",
+    "FJ1565: simplification pinched 0 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)",
+    "FJ1586: simplification retried 20x with jittered/larger target to avoid unresolvable non-manifold edges: 864 tris vs target 691",
+    "FJ1586: simplification pinched 0 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)"
+   ]
+  },
+  "muscle_sternohyoid": {
+   "file": "head",
+   "triangles": 1470,
+   "vertices": 739,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -26.221,
+     -137.78,
+     1313.45
+    ],
+    "max": [
+     24.993,
+     -107.833,
+     1429.04
+    ]
+   },
+   "centroid": [
+    -0.681,
+    -118.479,
+    1366.578
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.0004,
+      0.09943,
+      0.99504
+     ],
+     [
+      1,
+      -0.00062,
+      -0.00034
+     ],
+     [
+      0.00059,
+      0.99504,
+      -0.09943
+     ]
+    ],
+    "min": [
+     -54.705,
+     -25.53,
+     -14.117
+    ],
+    "max": [
+     62.179,
+     25.684,
+     8.972
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1574",
+     "fma": "FMA13347",
+     "name": "Left sternohyoid"
+    },
+    {
+     "id": "FJ1596",
+     "fma": "FMA13346",
+     "name": "Right sternohyoid"
+    }
+   ],
+   "label": "Sternohyoid",
+   "sourceTriangles": 6194,
+   "maxSimplifyError": 0.252,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_sternothyroid": {
+   "file": "head",
+   "triangles": 1248,
+   "vertices": 628,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -22.953,
+     -141.243,
+     1301.8
+    ],
+    "max": [
+     21.679,
+     -96.554,
+     1415.73
+    ]
+   },
+   "centroid": [
+    -0.664,
+    -115.403,
+    1345.974
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00054,
+      0.28794,
+      0.95765
+     ],
+     [
+      1,
+      0.00041,
+      0.00044
+     ],
+     [
+      -0.00026,
+      0.95765,
+      -0.28794
+     ]
+    ],
+    "min": [
+     -48.801,
+     -22.298,
+     -14.169
+    ],
+    "max": [
+     72.091,
+     22.335,
+     6.711
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1575",
+     "fma": "FMA13351",
+     "name": "Left sternothyroid"
+    },
+    {
+     "id": "FJ1597",
+     "fma": "FMA13350",
+     "name": "Right sternothyroid"
+    }
+   ],
+   "label": "Sternothyroid",
+   "sourceTriangles": 5196,
+   "maxSimplifyError": 0.187,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1597: dropped 1 degenerate/tiny disconnected component(s) (2 tris)"
+   ]
+  },
+  "muscle_thyrohyoid": {
+   "file": "head",
+   "triangles": 372,
+   "vertices": 190,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -20.163,
+     -123.118,
+     1397.97
+    ],
+    "max": [
+     18.759,
+     -96.832,
+     1428.82
+    ]
+   },
+   "centroid": [
+    -0.682,
+    -109.739,
+    1414.724
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99999,
+      -0.00177,
+      0.00385
+     ],
+     [
+      -0.00423,
+      -0.47625,
+      0.8793
+     ],
+     [
+      -0.00027,
+      0.87931,
+      0.47626
+     ]
+    ],
+    "min": [
+     -19.485,
+     -15.962,
+     -8.281
+    ],
+    "max": [
+     19.438,
+     16.128,
+     12.224
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1577",
+     "fma": "FMA13353",
+     "name": "Left thyrohyoid"
+    },
+    {
+     "id": "FJ1599",
+     "fma": "FMA13352",
+     "name": "Right thyrohyoid"
+    }
+   ],
+   "label": "Thyrohyoid",
+   "sourceTriangles": 2844,
+   "maxSimplifyError": 0.264,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1577: dropped 1 degenerate/tiny disconnected component(s) (2 tris)",
+    "FJ1599: dropped 10 degenerate/tiny disconnected component(s) (40 tris)"
+   ]
+  },
+  "muscle_scalenus_anterior": {
+   "file": "head",
+   "triangles": 690,
+   "vertices": 351,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -56.293,
+     -96.806,
+     1334.31
+    ],
+    "max": [
+     54.851,
+     -78.804,
+     1420.96
+    ]
+   },
+   "centroid": [
+    -0.846,
+    -89.643,
+    1377.739
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00019,
+      0.00205
+     ],
+     [
+      -0.00206,
+      0.15933,
+      0.98722
+     ],
+     [
+      0.00014,
+      0.98722,
+      -0.15933
+     ]
+    ],
+    "min": [
+     -55.532,
+     -43.606,
+     -5.494
+    ],
+    "max": [
+     55.612,
+     44.139,
+     7.015
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1570",
+     "fma": "FMA13393",
+     "name": "Left scalenus anterior"
+    },
+    {
+     "id": "FJ1592",
+     "fma": "FMA13392",
+     "name": "Right scalenus anterior"
+    }
+   ],
+   "label": "Scalenus anterior",
+   "sourceTriangles": 5228,
+   "maxSimplifyError": 0.294,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 1,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1570: simplification pinched 0 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)"
+   ]
+  },
+  "muscle_scalenus_medius": {
+   "file": "head",
+   "triangles": 1086,
+   "vertices": 551,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -55.256,
+     -86.008,
+     1343.18
+    ],
+    "max": [
+     54.278,
+     -71.341,
+     1448.61
+    ]
+   },
+   "centroid": [
+    -0.731,
+    -78.905,
+    1390.922
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00006,
+      0.00026
+     ],
+     [
+      -0.00026,
+      0.04958,
+      0.99877
+     ],
+     [
+      0.00007,
+      0.99877,
+      -0.04958
+     ]
+    ],
+    "min": [
+     -54.537,
+     -47.986,
+     -6.451
+    ],
+    "max": [
+     54.997,
+     57.976,
+     8.114
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1571",
+     "fma": "FMA13391",
+     "name": "Left scalenus medius"
+    },
+    {
+     "id": "FJ1593",
+     "fma": "FMA13390",
+     "name": "Right scalenus medius"
+    }
+   ],
+   "label": "Scalenus medius",
+   "sourceTriangles": 8176,
+   "maxSimplifyError": 0.316,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1571: simplification pinched 1 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)",
+    "FJ1593: simplification pinched 1 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)"
+   ]
+  },
+  "muscle_scalenus_posterior": {
+   "file": "head",
+   "triangles": 698,
+   "vertices": 353,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -74.072,
+     -81.432,
+     1341.45
+    ],
+    "max": [
+     72.754,
+     -56.076,
+     1402.96
+    ]
+   },
+   "centroid": [
+    -0.599,
+    -70.725,
+    1370.319
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00002,
+      -0.00022
+     ],
+     [
+      0.00021,
+      -0.35841,
+      0.93356
+     ],
+     [
+      0.00006,
+      0.93356,
+      0.35841
+     ]
+    ],
+    "min": [
+     -73.466,
+     -29.115,
+     -5.335
+    ],
+    "max": [
+     73.36,
+     33.889,
+     5.926
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1572",
+     "fma": "FMA13389",
+     "name": "Left scalenus posterior"
+    },
+    {
+     "id": "FJ1594",
+     "fma": "FMA13388",
+     "name": "Right scalenus posterior"
+    }
+   ],
+   "label": "Scalenus posterior",
+   "sourceTriangles": 5534,
+   "maxSimplifyError": 0.312,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_longus_capitis": {
+   "file": "head",
+   "triangles": 1598,
+   "vertices": 807,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -26.782,
+     -95.049,
+     1385.68
+    ],
+    "max": [
+     25.481,
+     -77.389,
+     1496.69
+    ]
+   },
+   "centroid": [
+    -0.746,
+    -90.002,
+    1443.956
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.00171,
+      -0.05344,
+      0.99857
+     ],
+     [
+      1,
+      0.00024,
+      -0.0017
+     ],
+     [
+      -0.00015,
+      0.99857,
+      0.05344
+     ]
+    ],
+    "min": [
+     -58.508,
+     -25.984,
+     -5.12
+    ],
+    "max": [
+     52.768,
+     26.28,
+     11.905
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1561",
+     "fma": "FMA46310",
+     "name": "Left longus capitis"
+    },
+    {
+     "id": "FJ1582",
+     "fma": "FMA46309",
+     "name": "Right longus capitis"
+    }
+   ],
+   "label": "Longus capitis",
+   "sourceTriangles": 7854,
+   "maxSimplifyError": 0.271,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 1,
+    "outputWithinElements": 1,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1561: simplification pinched 2 edge(s); resolved by splitting 3 vertices (duplicate positions, zero-thickness contact remains)",
+    "FJ1582: simplification retried 28x with jittered/larger target to avoid unresolvable non-manifold edges: 1068 tris vs target 536",
+    "FJ1582: simplification pinched 2 edge(s); resolved by splitting 4 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 1 within elements (source had 1), 0 between different source elements"
+   ]
+  },
+  "muscle_longus_colli": {
+   "file": "head",
+   "triangles": 1002,
+   "vertices": 507,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -0.542,
+     -91.958,
+     1311.92
+    ],
+    "max": [
+     24.698,
+     -69.217,
+     1471.96
+    ]
+   },
+   "centroid": [
+    11.066,
+    -86.14,
+    1401.816
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.01322,
+      -0.05218,
+      0.99855
+     ],
+     [
+      0.9797,
+      0.20043,
+      -0.0025
+     ],
+     [
+      -0.20001,
+      0.97832,
+      0.05377
+     ]
+    ],
+    "min": [
+     -90.708,
+     -12.121,
+     -5.985
+    ],
+    "max": [
+     69.98,
+     14.474,
+     12.9
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1600",
+     "fma": "FMA46284",
+     "name": "Superior oblique part of left longus colli"
+    },
+    {
+     "id": "FJ1601",
+     "fma": "FMA46286",
+     "name": "Vertical intermediate part of left longus colli"
+    },
+    {
+     "id": "FJ1557",
+     "fma": "FMA46288",
+     "name": "Inferior oblique part of left longus colli"
+    }
+   ],
+   "label": "Longus colli (left side only in BodyParts3D)",
+   "sourceTriangles": 7162,
+   "maxSimplifyError": 0.358,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 145
+   },
+   "notes": [
+    "intersecting triangle pairs: 0 within elements (source had 0), 145 between different source elements"
+   ]
+  },
+  "muscle_levator_scapulae": {
+   "file": "head",
+   "triangles": 2548,
+   "vertices": 1290,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -80.885,
+     -82.454,
+     1309.32
+    ],
+    "max": [
+     80.885,
+     -12.087,
+     1468.56
+    ]
+   },
+   "centroid": [
+    0.006,
+    -47.75,
+    1378.903
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00049,
+      0.001
+     ],
+     [
+      -0.00112,
+      -0.44008,
+      0.89796
+     ],
+     [
+      0,
+      0.89796,
+      0.44008
+     ]
+    ],
+    "min": [
+     -80.94,
+     -77.705,
+     -16.298
+    ],
+    "max": [
+     80.829,
+     92.405,
+     15.959
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1532M",
+     "fma": "FMA32541",
+     "name": "Left levator scapulae"
+    },
+    {
+     "id": "FJ1532",
+     "fma": "FMA32540",
+     "name": "Right levator scapulae"
+    }
+   ],
+   "label": "Levator scapulae",
+   "sourceTriangles": 9424,
+   "maxSimplifyError": 0.245,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 2,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1532M: dropped 3 degenerate/tiny disconnected component(s) (6 tris)",
+    "FJ1532: dropped 3 degenerate/tiny disconnected component(s) (6 tris)",
+    "FJ1532M: simplification retried 1x with jittered/larger target to avoid unresolvable non-manifold edges: 1286 tris vs target 1264",
+    "FJ1532M: simplification pinched 1 edge(s); resolved by splitting 7 vertices (duplicate positions, zero-thickness contact remains)",
+    "FJ1532: simplification pinched 3 edge(s); resolved by splitting 7 vertices (duplicate positions, zero-thickness contact remains)"
+   ]
+  },
+  "muscle_superior_rectus": {
+   "file": "head",
+   "triangles": 224,
+   "vertices": 116,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -36.821,
+     -161.569,
+     1525.8
+    ],
+    "max": [
+     35.342,
+     -121.073,
+     1532.61
+    ]
+   },
+   "centroid": [
+    -0.65,
+    -143.501,
+    1530.179
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00143,
+      0.00065
+     ],
+     [
+      -0.00145,
+      0.99946,
+      0.03268
+     ],
+     [
+      -0.0006,
+      -0.03269,
+      0.99947
+     ]
+    ],
+    "min": [
+     -36.197,
+     -18.177,
+     -3.808
+    ],
+    "max": [
+     35.966,
+     22.419,
+     2.573
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1323",
+     "fma": "FMA49045",
+     "name": "Left superior rectus"
+    },
+    {
+     "id": "FJ1374",
+     "fma": "FMA49044",
+     "name": "Right superior rectus"
+    }
+   ],
+   "label": "Superior rectus (extra-ocular)",
+   "sourceTriangles": 5648,
+   "maxSimplifyError": 0.308,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 1,
+    "betweenElements": 0
+   },
+   "notes": [
+    "intersecting triangle pairs: 1 within elements (source had 0), 0 between different source elements"
+   ]
+  },
+  "muscle_inferior_rectus": {
+   "file": "head",
+   "triangles": 262,
+   "vertices": 135,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -35.508,
+     -159.801,
+     1504.23
+    ],
+    "max": [
+     34.233,
+     -119.04,
+     1526.88
+    ]
+   },
+   "centroid": [
+    -0.629,
+    -140.259,
+    1511.579
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99998,
+      0.00565,
+      0.00263
+     ],
+     [
+      -0.00622,
+      0.88314,
+      0.46907
+     ],
+     [
+      0.00033,
+      -0.46908,
+      0.88316
+     ]
+    ],
+    "min": [
+     -34.991,
+     -18.909,
+     -4.235
+    ],
+    "max": [
+     34.75,
+     25.853,
+     7.276
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1295",
+     "fma": "FMA49047",
+     "name": "Left inferior rectus"
+    },
+    {
+     "id": "FJ1346",
+     "fma": "FMA49046",
+     "name": "Right inferior rectus"
+    }
+   ],
+   "label": "Inferior rectus (extra-ocular)",
+   "sourceTriangles": 7102,
+   "maxSimplifyError": 0.33,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_medial_rectus": {
+   "file": "head",
+   "triangles": 200,
+   "vertices": 104,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -22.489,
+     -161.146,
+     1512.41
+    ],
+    "max": [
+     21.216,
+     -120.934,
+     1530.05
+    ]
+   },
+   "centroid": [
+    -0.703,
+    -144.184,
+    1521.189
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.0026,
+      -0.00065
+     ],
+     [
+      -0.00234,
+      0.96593,
+      0.25878
+     ],
+     [
+      0.0013,
+      -0.25878,
+      0.96594
+     ]
+    ],
+    "min": [
+     -21.829,
+     -17.548,
+     -4.495
+    ],
+    "max": [
+     21.876,
+     23.817,
+     5.557
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1308",
+     "fma": "FMA49057",
+     "name": "Left medial rectus"
+    },
+    {
+     "id": "FJ1359",
+     "fma": "FMA49056",
+     "name": "Right medial rectus"
+    }
+   ],
+   "label": "Medial rectus (extra-ocular)",
+   "sourceTriangles": 5124,
+   "maxSimplifyError": 0.316,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_lateral_rectus": {
+   "file": "head",
+   "triangles": 244,
+   "vertices": 126,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -44.048,
+     -158.642,
+     1513.19
+    ],
+    "max": [
+     42.748,
+     -119.102,
+     1530.68
+    ]
+   },
+   "centroid": [
+    -0.761,
+    -140.876,
+    1523.195
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00203,
+      0.00043
+     ],
+     [
+      -0.00207,
+      0.95638,
+      0.29212
+     ],
+     [
+      0.00018,
+      -0.29212,
+      0.95638
+     ]
+    ],
+    "min": [
+     -43.305,
+     -18.988,
+     -4.715
+    ],
+    "max": [
+     43.485,
+     22.105,
+     5.094
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1304",
+     "fma": "FMA49055",
+     "name": "Left lateral rectus"
+    },
+    {
+     "id": "FJ1355",
+     "fma": "FMA49054",
+     "name": "Right lateral rectus"
+    }
+   ],
+   "label": "Lateral rectus (extra-ocular)",
+   "sourceTriangles": 6592,
+   "maxSimplifyError": 0.335,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_superior_oblique": {
+   "file": "head",
+   "triangles": 276,
+   "vertices": 142,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -40.554,
+     -165.447,
+     1523.31
+    ],
+    "max": [
+     39.232,
+     -122.073,
+     1534.66
+    ]
+   },
+   "centroid": [
+    -0.476,
+    -145.981,
+    1529.995
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00276,
+      0.00047
+     ],
+     [
+      0.0028,
+      0.99393,
+      -0.10999
+     ],
+     [
+      -0.00017,
+      0.10999,
+      0.99393
+     ]
+    ],
+    "min": [
+     -40.073,
+     -19.761,
+     -6.447
+    ],
+    "max": [
+     39.713,
+     24,
+     4.039
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1322",
+     "fma": "FMA49053",
+     "name": "Left superior oblique"
+    },
+    {
+     "id": "FJ1373",
+     "fma": "FMA49052",
+     "name": "Right superior oblique"
+    }
+   ],
+   "label": "Superior oblique (extra-ocular)",
+   "sourceTriangles": 7150,
+   "maxSimplifyError": 0.399,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_inferior_oblique": {
+   "file": "head",
+   "triangles": 266,
+   "vertices": 137,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -43.06,
+     -166.278,
+     1503.16
+    ],
+    "max": [
+     41.701,
+     -140.486,
+     1519.48
+    ]
+   },
+   "centroid": [
+    -0.96,
+    -151.418,
+    1508.795
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00036,
+      0.00017
+     ],
+     [
+      0.0002,
+      0.82509,
+      0.565
+     ],
+     [
+      -0.00035,
+      -0.565,
+      0.82509
+     ]
+    ],
+    "min": [
+     -42.099,
+     -13.198,
+     -4.667
+    ],
+    "max": [
+     42.662,
+     13.103,
+     8.206
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1294",
+     "fma": "FMA49051",
+     "name": "Left inferior oblique"
+    },
+    {
+     "id": "FJ1345",
+     "fma": "FMA49050",
+     "name": "Right inferior oblique"
+    }
+   ],
+   "label": "Inferior oblique (extra-ocular)",
+   "sourceTriangles": 4702,
+   "maxSimplifyError": 0.288,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_levator_palpebrae_superioris": {
+   "file": "head",
+   "triangles": 432,
+   "vertices": 220,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -43.057,
+     -165.379,
+     1520.93
+    ],
+    "max": [
+     41.908,
+     -119.624,
+     1536.97
+    ]
+   },
+   "centroid": [
+    -0.65,
+    -150.015,
+    1532.481
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00194,
+      0.00005
+     ],
+     [
+      -0.00194,
+      0.99722,
+      0.07444
+     ],
+     [
+      0.0001,
+      -0.07444,
+      0.99723
+     ]
+    ],
+    "min": [
+     -42.424,
+     -15.918,
+     -10.871
+    ],
+    "max": [
+     42.541,
+     30.314,
+     4.598
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1306",
+     "fma": "FMA49049",
+     "name": "Left levator palpebrae superioris"
+    },
+    {
+     "id": "FJ1357",
+     "fma": "FMA49048",
+     "name": "Right levator palpebrae superioris"
+    }
+   ],
+   "label": "Levator palpebrae superioris",
+   "sourceTriangles": 8718,
+   "maxSimplifyError": 0.323,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ1357: dropped 1 degenerate/tiny disconnected component(s) (2 tris)"
+   ]
+  },
+  "skin": {
+   "file": "head",
+   "triangles": 16000,
+   "vertices": 8000,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -197.734,
+     -205.113,
+     1341.16
+    ],
+    "max": [
+     196.238,
+     27.061,
+     1641.28
+    ]
+   },
+   "centroid": [
+    -0.651,
+    -72.127,
+    1451.093
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00015,
+      -0.15238,
+      0.98832
+     ],
+     [
+      1,
+      -0.00028,
+      0.00011
+     ],
+     [
+      0.00026,
+      0.98832,
+      0.15238
+     ]
+    ],
+    "min": [
+     -123.773,
+     -197.1,
+     -125.853
+    ],
+    "max": [
+     191.767,
+     196.872,
+     111.452
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ2810",
+     "fma": "FMA7163",
+     "name": "Skin"
+    }
+   ],
+   "label": "Skin of head and neck (cropped and capped)",
+   "sourceTriangles": 29608,
+   "maxSimplifyError": 0.167,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 183,
+    "outputWithinElements": 68,
+    "betweenElements": 0
+   },
+   "notes": [
+    "cropped at z=1341.16 mm (25 mm below C7 vertebral body), 2 cut loop(s) capped with fans: 274 verts, perimeter 940 mm, cap area 510 cm2; 273 verts, perimeter 918 mm, cap area 482 cm2",
+    "intersecting triangle pairs: 68 within elements (source had 183), 0 between different source elements"
+   ]
+  },
+  "radius": {
+   "file": "hand",
+   "triangles": 672,
+   "vertices": 338,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -279.535,
+     -126.908,
+     805.835
+    ],
+    "max": [
+     -219.833,
+     -61.103,
+     1035.05
+    ]
+   },
+   "centroid": [
+    -248.461,
+    -92.527,
+    916.039
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.15454,
+      0.18499,
+      0.97051
+     ],
+     [
+      0.91165,
+      -0.40532,
+      -0.06791
+     ],
+     [
+      0.3808,
+      0.89527,
+      -0.23128
+     ]
+    ],
+    "min": [
+     -116.073,
+     -11.869,
+     -14.501
+    ],
+    "max": [
+     121.536,
+     20.303,
+     9.767
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3349",
+     "fma": "FMA23464",
+     "name": "Right radius"
+    }
+   ],
+   "label": "Right radius",
+   "sourceTriangles": 672,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "ulna": {
+   "file": "hand",
+   "triangles": 834,
+   "vertices": 419,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -247.179,
+     -123.494,
+     805.173
+    ],
+    "max": [
+     -196.881,
+     -44.799,
+     1052.45
+    ]
+   },
+   "centroid": [
+    -221.811,
+    -79.55,
+    947.057
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.1199,
+      0.24871,
+      0.96113
+     ],
+     [
+      -0.09676,
+      0.96643,
+      -0.23801
+     ],
+     [
+      0.98806,
+      0.06446,
+      -0.13994
+     ]
+    ],
+    "min": [
+     -146.409,
+     -22.864,
+     -11.251
+    ],
+    "max": [
+     108.73,
+     12.604,
+     13.78
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3391",
+     "fma": "FMA23467",
+     "name": "Right ulna"
+    }
+   ],
+   "label": "Right ulna",
+   "sourceTriangles": 834,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "scaphoid": {
+   "file": "hand",
+   "triangles": 322,
+   "vertices": 163,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -273.06,
+     -126.663,
+     796.354
+    ],
+    "max": [
+     -249.332,
+     -111.574,
+     811.79
+    ]
+   },
+   "centroid": [
+    -261.664,
+    -118.627,
+    804.826
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.90321,
+      0.36848,
+      0.22007
+     ],
+     [
+      0.03188,
+      -0.56895,
+      0.82176
+     ],
+     [
+      -0.42801,
+      0.7352,
+      0.52563
+     ]
+    ],
+    "min": [
+     -12.364,
+     -7.086,
+     -5.913
+    ],
+    "max": [
+     12.678,
+     6.869,
+     6.514
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3383",
+     "fma": "FMA24435",
+     "name": "Right scaphoid"
+    }
+   ],
+   "label": "Right scaphoid",
+   "sourceTriangles": 322,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "lunate": {
+   "file": "hand",
+   "triangles": 332,
+   "vertices": 168,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -252.724,
+     -126.924,
+     797.461
+    ],
+    "max": [
+     -236.202,
+     -110.635,
+     809.82
+    ]
+   },
+   "centroid": [
+    -245.177,
+    -118.861,
+    803.83
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.11494,
+      0.96976,
+      -0.2153
+     ],
+     [
+      0.93312,
+      -0.03107,
+      0.35822
+     ],
+     [
+      -0.3407,
+      0.24208,
+      0.90847
+     ]
+    ],
+    "min": [
+     -8.372,
+     -7.647,
+     -5.867
+    ],
+    "max": [
+     8.127,
+     9.345,
+     5.279
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3374",
+     "fma": "FMA24437",
+     "name": "Right lunate"
+    }
+   ],
+   "label": "Right lunate",
+   "sourceTriangles": 332,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "triquetrum": {
+   "file": "hand",
+   "triangles": 170,
+   "vertices": 87,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -242.766,
+     -129.736,
+     788.769
+    ],
+    "max": [
+     -232.157,
+     -114.631,
+     802.59
+    ]
+   },
+   "centroid": [
+    -237.129,
+    -122.194,
+    795.713
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.25615,
+      0.86711,
+      0.42721
+     ],
+     [
+      0.01746,
+      -0.43773,
+      0.89894
+     ],
+     [
+      0.96648,
+      0.23772,
+      0.09699
+     ]
+    ],
+    "min": [
+     -8.944,
+     -6.353,
+     -4.73
+    ],
+    "max": [
+     8.031,
+     6.393,
+     4.95
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3390",
+     "fma": "FMA24439",
+     "name": "Right triquetral"
+    }
+   ],
+   "label": "Right triquetrum",
+   "sourceTriangles": 170,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "pisiform": {
+   "file": "hand",
+   "triangles": 190,
+   "vertices": 97,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -240.22,
+     -137.658,
+     789.675
+    ],
+    "max": [
+     -231.956,
+     -127.249,
+     801.325
+    ]
+   },
+   "centroid": [
+    -235.961,
+    -132.503,
+    795.549
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.13948,
+      0.55031,
+      0.82323
+     ],
+     [
+      0.51578,
+      0.6693,
+      -0.5348
+     ],
+     [
+      0.84529,
+      -0.4992,
+      0.19048
+     ]
+    ],
+    "min": [
+     -5.968,
+     -5.193,
+     -4.132
+    ],
+    "max": [
+     5.946,
+     5.17,
+     3.6
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3382",
+     "fma": "FMA24441",
+     "name": "Right pisiform"
+    }
+   ],
+   "label": "Right pisiform",
+   "sourceTriangles": 190,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "trapezium": {
+   "file": "hand",
+   "triangles": 434,
+   "vertices": 219,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -281.722,
+     -134.576,
+     785.805
+    ],
+    "max": [
+     -264.938,
+     -117.73,
+     805.733
+    ]
+   },
+   "centroid": [
+    -273.174,
+    -126.79,
+    796.329
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.27943,
+      -0.53497,
+      0.79732
+     ],
+     [
+      0.89194,
+      -0.16281,
+      -0.42183
+     ],
+     [
+      0.35548,
+      0.82904,
+      0.43167
+     ]
+    ],
+    "min": [
+     -11.476,
+     -8.266,
+     -6.925
+    ],
+    "max": [
+     11.105,
+     7.272,
+     6.776
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3388",
+     "fma": "FMA24443",
+     "name": "Right trapezium"
+    }
+   ],
+   "label": "Right trapezium",
+   "sourceTriangles": 434,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "trapezoid": {
+   "file": "hand",
+   "triangles": 360,
+   "vertices": 182,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -273.261,
+     -128.388,
+     782.865
+    ],
+    "max": [
+     -262.14,
+     -113.527,
+     795.311
+    ]
+   },
+   "centroid": [
+    -267.387,
+    -120.579,
+    789.379
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.19971,
+      0.84803,
+      -0.49088
+     ],
+     [
+      0.72894,
+      -0.2062,
+      -0.65278
+     ],
+     [
+      0.6548,
+      0.48819,
+      0.57699
+     ]
+    ],
+    "min": [
+     -8.308,
+     -6.47,
+     -5.404
+    ],
+    "max": [
+     8.427,
+     5.485,
+     4.881
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3389",
+     "fma": "FMA23725",
+     "name": "Right trapezoid"
+    }
+   ],
+   "label": "Right trapezoid",
+   "sourceTriangles": 360,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "capitate": {
+   "file": "hand",
+   "triangles": 428,
+   "vertices": 216,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -264.482,
+     -127.492,
+     782.191
+    ],
+    "max": [
+     -248.401,
+     -110.534,
+     804.597
+    ]
+   },
+   "centroid": [
+    -256.737,
+    -119.309,
+    792.882
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.07134,
+      -0.26851,
+      0.96063
+     ],
+     [
+      0.66725,
+      0.72871,
+      0.15413
+     ],
+     [
+      0.74141,
+      -0.62998,
+      -0.23115
+     ]
+    ],
+    "min": [
+     -11.471,
+     -9.553,
+     -6.763
+    ],
+    "max": [
+     11.792,
+     8.12,
+     5.894
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3361",
+     "fma": "FMA24446",
+     "name": "Right capitate"
+    }
+   ],
+   "label": "Right capitate",
+   "sourceTriangles": 428,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "hamate": {
+   "file": "hand",
+   "triangles": 522,
+   "vertices": 263,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -251.928,
+     -133.931,
+     781.293
+    ],
+    "max": [
+     -236.6,
+     -111.406,
+     800.653
+    ]
+   },
+   "centroid": [
+    -244.967,
+    -120.207,
+    789.865
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.16721,
+      0.97879,
+      0.11838
+     ],
+     [
+      -0.42745,
+      -0.18017,
+      0.8859
+     ],
+     [
+      0.88844,
+      0.09753,
+      0.44851
+     ]
+    ],
+    "min": [
+     -13.259,
+     -9.87,
+     -7.899
+    ],
+    "max": [
+     9.794,
+     10.299,
+     7.427
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3367",
+     "fma": "FMA24448",
+     "name": "Right hamate"
+    }
+   ],
+   "label": "Right hamate",
+   "sourceTriangles": 522,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mc1": {
+   "file": "hand",
+   "triangles": 566,
+   "vertices": 285,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -309.577,
+     -153.861,
+     760.281
+    ],
+    "max": [
+     -272.236,
+     -123.627,
+     797.238
+    ]
+   },
+   "centroid": [
+    -292.362,
+    -137.556,
+    779.185
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.63518,
+      0.42368,
+      0.64578
+     ],
+     [
+      -0.26256,
+      -0.66787,
+      0.69642
+     ],
+     [
+      0.72636,
+      -0.61192,
+      -0.31298
+     ]
+    ],
+    "min": [
+     -23.392,
+     -7.119,
+     -5.396
+    ],
+    "max": [
+     24.067,
+     7.765,
+     8.708
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3350",
+     "fma": "FMA24464",
+     "name": "Right first metacarpal bone"
+    }
+   ],
+   "label": "Right first metacarpal",
+   "sourceTriangles": 566,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mc2": {
+   "file": "hand",
+   "triangles": 748,
+   "vertices": 376,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -292.687,
+     -142.787,
+     718.871
+    ],
+    "max": [
+     -261.82,
+     -117.057,
+     786.869
+    ]
+   },
+   "centroid": [
+    -277.678,
+    -128.687,
+    753.34
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.25929,
+      0.1996,
+      0.94495
+     ],
+     [
+      -0.41397,
+      0.90694,
+      -0.07798
+     ],
+     [
+      0.87258,
+      0.37096,
+      -0.31779
+     ]
+    ],
+    "min": [
+     -36.165,
+     -10.891,
+     -9.416
+    ],
+    "max": [
+     35.045,
+     6.883,
+     7.539
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3352",
+     "fma": "FMA24466",
+     "name": "Right second metacarpal bone"
+    }
+   ],
+   "label": "Right second metacarpal",
+   "sourceTriangles": 748,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mc3": {
+   "file": "hand",
+   "triangles": 702,
+   "vertices": 353,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -272.346,
+     -142.733,
+     720.84
+    ],
+    "max": [
+     -252.486,
+     -112.326,
+     785.262
+    ]
+   },
+   "centroid": [
+    -262.546,
+    -126.621,
+    752.699
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.11653,
+      0.31121,
+      0.94317
+     ],
+     [
+      -0.25241,
+      0.92774,
+      -0.27493
+     ],
+     [
+      0.96058,
+      0.20603,
+      -0.18666
+     ]
+    ],
+    "min": [
+     -33.718,
+     -10.042,
+     -8.046
+    ],
+    "max": [
+     34.568,
+     6.61,
+     7.611
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3354",
+     "fma": "FMA24468",
+     "name": "Right third metacarpal bone"
+    }
+   ],
+   "label": "Right third metacarpal",
+   "sourceTriangles": 702,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mc4": {
+   "file": "hand",
+   "triangles": 536,
+   "vertices": 270,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -253.741,
+     -141.971,
+     725.279
+    ],
+    "max": [
+     -241.426,
+     -115.917,
+     785.158
+    ]
+   },
+   "centroid": [
+    -247.893,
+    -127.772,
+    753.468
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.02992,
+      0.2831,
+      0.95862
+     ],
+     [
+      -0.08615,
+      0.95475,
+      -0.28465
+     ],
+     [
+      0.99583,
+      0.09111,
+      0.00418
+     ]
+    ],
+    "min": [
+     -29.781,
+     -8.264,
+     -6.056
+    ],
+    "max": [
+     31.224,
+     6.12,
+     6.393
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3356",
+     "fma": "FMA24470",
+     "name": "Right fourth metacarpal bone"
+    }
+   ],
+   "label": "Right fourth metacarpal",
+   "sourceTriangles": 536,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mc5": {
+   "file": "hand",
+   "triangles": 506,
+   "vertices": 255,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -245.314,
+     -144.52,
+     732.016
+    ],
+    "max": [
+     -225.202,
+     -120.076,
+     786.919
+    ]
+   },
+   "centroid": [
+    -234.84,
+    -131.055,
+    758.303
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.17812,
+      0.28463,
+      0.94194
+     ],
+     [
+      0.05053,
+      0.95863,
+      -0.28012
+     ],
+     [
+      0.98271,
+      0.0023,
+      0.18514
+     ]
+    ],
+    "min": [
+     -27.828,
+     -7.126,
+     -6.378
+    ],
+    "max": [
+     28.841,
+     5.681,
+     5.94
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3358",
+     "fma": "FMA24472",
+     "name": "Right fifth metacarpal bone"
+    }
+   ],
+   "label": "Right fifth metacarpal",
+   "sourceTriangles": 506,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "pp1": {
+   "file": "hand",
+   "triangles": 316,
+   "vertices": 160,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -318.809,
+     -164.883,
+     735.607
+    ],
+    "max": [
+     -298.649,
+     -142.653,
+     767.198
+    ]
+   },
+   "centroid": [
+    -309.367,
+    -152.757,
+    752.196
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.36915,
+      0.41859,
+      0.82976
+     ],
+     [
+      0.64467,
+      0.52776,
+      -0.55305
+     ],
+     [
+      -0.66942,
+      0.73908,
+      -0.07503
+     ]
+    ],
+    "min": [
+     -17.402,
+     -7.288,
+     -5.546
+    ],
+    "max": [
+     13.89,
+     7.434,
+     5.043
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3327",
+     "fma": "FMA24450",
+     "name": "Proximal phalanx of right thumb"
+    }
+   ],
+   "label": "Proximal phalanx of right thumb",
+   "sourceTriangles": 316,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ3327: dropped 1 degenerate/tiny disconnected component(s) (2 tris)"
+   ]
+  },
+  "pp2": {
+   "file": "hand",
+   "triangles": 386,
+   "vertices": 195,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -302.765,
+     -156.758,
+     685.819
+    ],
+    "max": [
+     -280.952,
+     -134.093,
+     723.197
+    ]
+   },
+   "centroid": [
+    -292.519,
+    -144.379,
+    705.918
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.28009,
+      0.40444,
+      0.87062
+     ],
+     [
+      0.95861,
+      -0.06959,
+      -0.27607
+     ],
+     [
+      -0.05107,
+      0.91191,
+      -0.4072
+     ]
+    ],
+    "min": [
+     -22.455,
+     -7.848,
+     -6.456
+    ],
+    "max": [
+     17.748,
+     7.792,
+     4.842
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3322",
+     "fma": "FMA24451",
+     "name": "Proximal phalanx of right index finger"
+    }
+   ],
+   "label": "Proximal phalanx of right index finger",
+   "sourceTriangles": 386,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "pp3": {
+   "file": "hand",
+   "triangles": 458,
+   "vertices": 231,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -277.414,
+     -164.201,
+     684.281
+    ],
+    "max": [
+     -259.208,
+     -135.112,
+     724.861
+    ]
+   },
+   "centroid": [
+    -268.99,
+    -148.185,
+    705.563
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.12727,
+      0.49809,
+      0.85773
+     ],
+     [
+      0.98298,
+      -0.17888,
+      -0.04198
+     ],
+     [
+      0.13252,
+      0.84847,
+      -0.51238
+     ]
+    ],
+    "min": [
+     -24.954,
+     -7.709,
+     -6.759
+    ],
+    "max": [
+     19.921,
+     7.789,
+     5.324
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3325",
+     "fma": "FMA24452",
+     "name": "Proximal phalanx of right middle finger"
+    }
+   ],
+   "label": "Proximal phalanx of right middle finger",
+   "sourceTriangles": 458,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "pp4": {
+   "file": "hand",
+   "triangles": 376,
+   "vertices": 190,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -253.824,
+     -161.977,
+     689.968
+    ],
+    "max": [
+     -240.591,
+     -135.658,
+     728.932
+    ]
+   },
+   "centroid": [
+    -247.544,
+    -147.391,
+    710.372
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.03026,
+      0.4625,
+      0.8861
+     ],
+     [
+      0.98278,
+      -0.17542,
+      0.058
+     ],
+     [
+      0.18227,
+      0.86909,
+      -0.45985
+     ]
+    ],
+    "min": [
+     -23.26,
+     -6.475,
+     -6.155
+    ],
+    "max": [
+     18.641,
+     6.969,
+     5.261
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3326",
+     "fma": "FMA24453",
+     "name": "Proximal phalanx of right ring finger"
+    }
+   ],
+   "label": "Proximal phalanx of right ring finger",
+   "sourceTriangles": 376,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "pp5": {
+   "file": "hand",
+   "triangles": 314,
+   "vertices": 159,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -236.329,
+     -159.523,
+     703.356
+    ],
+    "max": [
+     -222.152,
+     -138.721,
+     735.956
+    ]
+   },
+   "centroid": [
+    -228.418,
+    -147.746,
+    720.823
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.12485,
+      0.44387,
+      0.88735
+     ],
+     [
+      0.99139,
+      0.02022,
+      0.12938
+     ],
+     [
+      0.03949,
+      0.89587,
+      -0.44257
+     ]
+    ],
+    "min": [
+     -19.572,
+     -6.515,
+     -5.336
+    ],
+    "max": [
+     14.788,
+     6.94,
+     4.436
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3323",
+     "fma": "FMA24454",
+     "name": "Proximal phalanx of right little finger"
+    }
+   ],
+   "label": "Proximal phalanx of right little finger",
+   "sourceTriangles": 314,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mp2": {
+   "file": "hand",
+   "triangles": 264,
+   "vertices": 134,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -309,
+     -172.083,
+     671.006
+    ],
+    "max": [
+     -294.4,
+     -151.309,
+     691.476
+    ]
+   },
+   "centroid": [
+    -302.15,
+    -161.389,
+    680.923
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.27614,
+      0.69643,
+      0.66237
+     ],
+     [
+      0.92955,
+      -0.01835,
+      -0.36824
+     ],
+     [
+      -0.2443,
+      0.71739,
+      -0.65243
+     ]
+    ],
+    "min": [
+     -13.741,
+     -5.751,
+     -4.433
+    ],
+    "max": [
+     11.384,
+     5.476,
+     3.961
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3303",
+     "fma": "FMA24455",
+     "name": "Middle phalanx of right index finger"
+    }
+   ],
+   "label": "Middle phalanx of right index finger",
+   "sourceTriangles": 264,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mp3": {
+   "file": "hand",
+   "triangles": 342,
+   "vertices": 173,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -280.202,
+     -180.934,
+     662.457
+    ],
+    "max": [
+     -266.588,
+     -157.799,
+     687.807
+    ]
+   },
+   "centroid": [
+    -273.809,
+    -168.744,
+    675.343
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.12693,
+      0.6214,
+      0.77315
+     ],
+     [
+      0.9892,
+      -0.13693,
+      -0.05235
+     ],
+     [
+      0.07334,
+      0.77144,
+      -0.63206
+     ]
+    ],
+    "min": [
+     -16.494,
+     -6.302,
+     -5.556
+    ],
+    "max": [
+     13.903,
+     6.06,
+     3.964
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3306",
+     "fma": "FMA24456",
+     "name": "Middle phalanx of right middle finger"
+    }
+   ],
+   "label": "Middle phalanx of right middle finger",
+   "sourceTriangles": 342,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mp4": {
+   "file": "hand",
+   "triangles": 316,
+   "vertices": 160,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -254.293,
+     -180.567,
+     669.704
+    ],
+    "max": [
+     -242.763,
+     -156.536,
+     693.604
+    ]
+   },
+   "centroid": [
+    -248.908,
+    -167.949,
+    681.628
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.05674,
+      0.67871,
+      0.73221
+     ],
+     [
+      0.98083,
+      -0.17483,
+      0.08605
+     ],
+     [
+      0.18642,
+      0.71329,
+      -0.67562
+     ]
+    ],
+    "min": [
+     -16.5,
+     -5.6,
+     -5.082
+    ],
+    "max": [
+     13.547,
+     5.761,
+     3.717
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3292",
+     "fma": "FMA24457",
+     "name": "Middle phalanx of right ring finger"
+    }
+   ],
+   "label": "Middle phalanx of right ring finger",
+   "sourceTriangles": 316,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "mp5": {
+   "file": "hand",
+   "triangles": 208,
+   "vertices": 106,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -230.545,
+     -171.439,
+     687.57
+    ],
+    "max": [
+     -218.935,
+     -154.823,
+     707.155
+    ]
+   },
+   "centroid": [
+    -224.248,
+    -163.026,
+    697.357
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.16222,
+      0.59289,
+      0.78878
+     ],
+     [
+      0.97848,
+      -0.00664,
+      0.20623
+     ],
+     [
+      0.12751,
+      0.80526,
+      -0.57905
+     ]
+    ],
+    "min": [
+     -12.452,
+     -5.178,
+     -4.322
+    ],
+    "max": [
+     9.979,
+     5.068,
+     3.528
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3304",
+     "fma": "FMA24458",
+     "name": "Middle phalanx of right little finger"
+    }
+   ],
+   "label": "Middle phalanx of right little finger",
+   "sourceTriangles": 208,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "dp1": {
+   "file": "hand",
+   "triangles": 240,
+   "vertices": 122,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -323.914,
+     -173.358,
+     719.139
+    ],
+    "max": [
+     -310.263,
+     -157.135,
+     742.166
+    ]
+   },
+   "centroid": [
+    -317.291,
+    -165.399,
+    731.985
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.35007,
+      0.45384,
+      0.81944
+     ],
+     [
+      0.40128,
+      0.7178,
+      -0.56898
+     ],
+     [
+      0.84642,
+      -0.52801,
+      -0.06916
+     ]
+    ],
+    "min": [
+     -14.698,
+     -6.036,
+     -4.305
+    ],
+    "max": [
+     10.046,
+     6.552,
+     3.271
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3198",
+     "fma": "FMA24459",
+     "name": "Distal phalanx of right thumb"
+    }
+   ],
+   "label": "Distal phalanx of right thumb",
+   "sourceTriangles": 240,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "dp2": {
+   "file": "hand",
+   "triangles": 210,
+   "vertices": 107,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -311.368,
+     -186.73,
+     661.846
+    ],
+    "max": [
+     -301.425,
+     -169.647,
+     675.689
+    ]
+   },
+   "centroid": [
+    -306.872,
+    -177.62,
+    668.963
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.14745,
+      0.79367,
+      0.5902
+     ],
+     [
+      0.97964,
+      -0.03501,
+      -0.19767
+     ],
+     [
+      0.13623,
+      -0.60733,
+      0.78268
+     ]
+    ],
+    "min": [
+     -10.76,
+     -4.531,
+     -3.193
+    ],
+    "max": [
+     8.377,
+     4.633,
+     3.056
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3193",
+     "fma": "FMA24460",
+     "name": "Distal phalanx of right index finger"
+    }
+   ],
+   "label": "Distal phalanx of right index finger",
+   "sourceTriangles": 210,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "dp3": {
+   "file": "hand",
+   "triangles": 174,
+   "vertices": 89,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -280.912,
+     -195.428,
+     653.067
+    ],
+    "max": [
+     -271.365,
+     -178.205,
+     666.531
+    ]
+   },
+   "centroid": [
+    -276.659,
+    -185.994,
+    660.135
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.09116,
+      0.82587,
+      0.55644
+     ],
+     [
+      0.9948,
+      -0.04999,
+      -0.08877
+     ],
+     [
+      0.0455,
+      -0.56163,
+      0.82613
+     ]
+    ],
+    "min": [
+     -10.615,
+     -4.847,
+     -3.273
+    ],
+    "max": [
+     7.766,
+     4.754,
+     3.081
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3196",
+     "fma": "FMA24461",
+     "name": "Distal phalanx of right middle finger"
+    }
+   ],
+   "label": "Distal phalanx of right middle finger",
+   "sourceTriangles": 174,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "dp4": {
+   "file": "hand",
+   "triangles": 112,
+   "vertices": 58,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -253.614,
+     -194.38,
+     664.869
+    ],
+    "max": [
+     -245.281,
+     -178.717,
+     674.008
+    ]
+   },
+   "centroid": [
+    -249.75,
+    -185.656,
+    669.428
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.02925,
+      0.92003,
+      0.39077
+     ],
+     [
+      0.99957,
+      -0.02774,
+      -0.0095
+     ],
+     [
+      -0.0021,
+      -0.39088,
+      0.92044
+     ]
+    ],
+    "min": [
+     -9.202,
+     -3.982,
+     -2.524
+    ],
+    "max": [
+     6.588,
+     4.351,
+     2.533
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3197",
+     "fma": "FMA24462",
+     "name": "Distal phalanx of right ring finger"
+    }
+   ],
+   "label": "Distal phalanx of right ring finger",
+   "sourceTriangles": 112,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "dp5": {
+   "file": "hand",
+   "triangles": 186,
+   "vertices": 95,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -227.203,
+     -181.873,
+     676.749
+    ],
+    "max": [
+     -218.895,
+     -168.171,
+     689.277
+    ]
+   },
+   "centroid": [
+    -222.418,
+    -174.964,
+    683.549
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.0968,
+      0.72734,
+      0.67942
+     ],
+     [
+      0.99432,
+      0.04035,
+      0.09847
+     ],
+     [
+      -0.04421,
+      -0.68509,
+      0.72711
+     ]
+    ],
+    "min": [
+     -8.793,
+     -4.295,
+     -2.369
+    ],
+    "max": [
+     7.33,
+     4.055,
+     2.253
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3194",
+     "fma": "FMA24463",
+     "name": "Distal phalanx of right little finger"
+    }
+   ],
+   "label": "Distal phalanx of right little finger",
+   "sourceTriangles": 186,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FJ3194: dropped 1 degenerate/tiny disconnected component(s) (2 tris)"
+   ]
+  },
+  "clavicle_l": {
+   "file": "torso",
+   "triangles": 1176,
+   "vertices": 590,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     8.379,
+     -147.078,
+     1308.53
+    ],
+    "max": [
+     143.942,
+     -54.388,
+     1355.18
+    ]
+   },
+   "centroid": [
+    77.164,
+    -102.751,
+    1336.87
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.78152,
+      0.59096,
+      0.19998
+     ],
+     [
+      -0.59479,
+      0.8025,
+      -0.04702
+     ],
+     [
+      -0.18827,
+      -0.0822,
+      0.97867
+     ]
+    ],
+    "min": [
+     -75.798,
+     -19.126,
+     -13.462
+    ],
+    "max": [
+     76.164,
+     21.663,
+     11.446
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3237",
+     "fma": "FMA13323",
+     "name": "Left clavicle"
+    }
+   ],
+   "label": "Left clavicle",
+   "sourceTriangles": 1176,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "clavicle_r": {
+   "file": "torso",
+   "triangles": 1146,
+   "vertices": 575,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -145.277,
+     -146.948,
+     1308.62
+    ],
+    "max": [
+     -9.662,
+     -54.413,
+     1355.44
+    ]
+   },
+   "centroid": [
+    -78.517,
+    -102.73,
+    1336.882
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.78174,
+      -0.59064,
+      -0.20008
+     ],
+     [
+      0.59447,
+      0.80274,
+      -0.04706
+     ],
+     [
+      0.18841,
+      -0.08215,
+      0.97865
+     ]
+    ],
+    "min": [
+     -75.984,
+     -19.194,
+     -13.364
+    ],
+    "max": [
+     75.871,
+     21.66,
+     11.424
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3362",
+     "fma": "FMA13322",
+     "name": "Right clavicle"
+    }
+   ],
+   "label": "Right clavicle",
+   "sourceTriangles": 1146,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "scapula_l": {
+   "file": "torso",
+   "triangles": 5000,
+   "vertices": 2502,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     57.061,
+     -102.845,
+     1183.99
+    ],
+    "max": [
+     166.464,
+     5.05,
+     1349.86
+    ]
+   },
+   "centroid": [
+    107.797,
+    -32.863,
+    1287.401
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.37607,
+      -0.4202,
+      0.82584
+     ],
+     [
+      0.7734,
+      -0.34851,
+      -0.52952
+     ],
+     [
+      0.51032,
+      0.83784,
+      0.19392
+     ]
+    ],
+    "min": [
+     -103.057,
+     -57.747,
+     -39.879
+    ],
+    "max": [
+     87.533,
+     41.557,
+     34.3
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3279",
+     "fma": "FMA13396",
+     "name": "Left scapula"
+    }
+   ],
+   "label": "Left scapula",
+   "sourceTriangles": 28106,
+   "maxSimplifyError": 0.129,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "scapula_r": {
+   "file": "torso",
+   "triangles": 5000,
+   "vertices": 2502,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -166.413,
+     -102.856,
+     1183.98
+    ],
+    "max": [
+     -57.133,
+     5.024,
+     1349.85
+    ]
+   },
+   "centroid": [
+    -107.804,
+    -32.87,
+    1287.405
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.37621,
+      -0.4203,
+      0.82572
+     ],
+     [
+      0.77325,
+      0.34854,
+      0.52972
+     ],
+     [
+      -0.51044,
+      0.83777,
+      0.19387
+     ]
+    ],
+    "min": [
+     -103.059,
+     -41.542,
+     -39.832
+    ],
+    "max": [
+     87.526,
+     57.787,
+     34.336
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3384",
+     "fma": "FMA13395",
+     "name": "Right scapula"
+    }
+   ],
+   "label": "Right scapula",
+   "sourceTriangles": 26172,
+   "maxSimplifyError": 0.134,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "humerus_l": {
+   "file": "torso",
+   "triangles": 2998,
+   "vertices": 1501,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     140.073,
+     -100.229,
+     1029.21
+    ],
+    "max": [
+     240.76,
+     -51.056,
+     1336.52
+    ]
+   },
+   "centroid": [
+    191.416,
+    -70.176,
+    1186.755
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.17019,
+      -0.04968,
+      0.98416
+     ],
+     [
+      0.97887,
+      0.10633,
+      0.17464
+     ],
+     [
+      -0.11332,
+      0.99309,
+      0.03053
+     ]
+    ],
+    "min": [
+     -156.478,
+     -37.365,
+     -23.063
+    ],
+    "max": [
+     153.054,
+     26.173,
+     23.166
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3262",
+     "fma": "FMA23131",
+     "name": "Left humerus"
+    }
+   ],
+   "label": "Left humerus",
+   "sourceTriangles": 3844,
+   "maxSimplifyError": 0.184,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "humerus_r": {
+   "file": "torso",
+   "triangles": 3000,
+   "vertices": 1502,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -240.841,
+     -100.219,
+     1029.2
+    ],
+    "max": [
+     -140.09,
+     -51.039,
+     1336.54
+    ]
+   },
+   "centroid": [
+    -191.398,
+    -70.178,
+    1186.813
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.17025,
+      -0.04975,
+      0.98414
+     ],
+     [
+      0.9785,
+      -0.10947,
+      -0.17481
+     ],
+     [
+      0.11643,
+      0.99274,
+      0.03004
+     ]
+    ],
+    "min": [
+     -156.526,
+     -26.289,
+     -22.988
+    ],
+    "max": [
+     152.966,
+     37.372,
+     23.244
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3368",
+     "fma": "FMA23130",
+     "name": "Right humerus"
+    }
+   ],
+   "label": "Right humerus",
+   "sourceTriangles": 3784,
+   "maxSimplifyError": 0.176,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "sternum": {
+   "file": "torso",
+   "triangles": 3804,
+   "vertices": 1918,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -27.45,
+     -213.832,
+     1164.02
+    ],
+    "max": [
+     27.45,
+     -130.801,
+     1325.25
+    ]
+   },
+   "centroid": [
+    0.027,
+    -178.526,
+    1252.137
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00048,
+      0.43169,
+      0.90202
+     ],
+     [
+      1,
+      -0.0001,
+      0.00058
+     ],
+     [
+      0.00034,
+      0.90202,
+      -0.43169
+     ]
+    ],
+    "min": [
+     -91.352,
+     -27.452,
+     -16.572
+    ],
+    "max": [
+     83.65,
+     27.447,
+     19.321
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3290",
+     "fma": "FMA7486",
+     "name": "Manubrium"
+    },
+    {
+     "id": "FJ3178",
+     "fma": "FMA7487",
+     "name": "Body of sternum"
+    },
+    {
+     "id": "FJ3153",
+     "fma": "FMA7488",
+     "name": "Xiphoid process"
+    }
+   ],
+   "label": "Sternum (manubrium + body + xiphoid process)",
+   "sourceTriangles": 8098,
+   "maxSimplifyError": 0.498,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 8,
+    "outputWithinElements": 0,
+    "betweenElements": 349
+   },
+   "notes": [
+    "FJ3178: dropped 8 degenerate/tiny disconnected component(s) (16 tris)",
+    "FJ3178: simplification retried 17x with jittered/larger target to avoid unresolvable non-manifold edges: 2196 tris vs target 2447",
+    "FJ3178: simplification pinched 4 edge(s); resolved by splitting 12 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 0 within elements (source had 8), 349 between different source elements"
+   ]
+  },
+  "ribs_l": {
+   "file": "torso",
+   "triangles": 8992,
+   "vertices": 4510,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     12.392,
+     -197.658,
+     1105.21
+    ],
+    "max": [
+     135.759,
+     -3.671,
+     1370.38
+    ]
+   },
+   "centroid": [
+    84.518,
+    -87.868,
+    1245.109
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.32767,
+      0.49067,
+      0.80739
+     ],
+     [
+      0.13546,
+      0.87014,
+      -0.47382
+     ],
+     [
+      0.93503,
+      0.04588,
+      0.35158
+     ]
+    ],
+    "min": [
+     -162.137,
+     -90.304,
+     -70.741
+    ],
+    "max": [
+     128.445,
+     94.404,
+     38.303
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3228",
+     "fma": "FMA7987",
+     "name": "Left first rib"
+    },
+    {
+     "id": "FJ3229",
+     "fma": "FMA8012",
+     "name": "Left second rib"
+    },
+    {
+     "id": "FJ3230",
+     "fma": "FMA8039",
+     "name": "Left third rib"
+    },
+    {
+     "id": "FJ3231",
+     "fma": "FMA8148",
+     "name": "Left fourth rib"
+    },
+    {
+     "id": "FJ3232",
+     "fma": "FMA8093",
+     "name": "Left fifth rib"
+    },
+    {
+     "id": "FJ3233",
+     "fma": "FMA8202",
+     "name": "Left sixth rib"
+    },
+    {
+     "id": "FJ3234",
+     "fma": "FMA8256",
+     "name": "Left seventh rib"
+    }
+   ],
+   "label": "Left ribs 1-7 (bone)",
+   "sourceTriangles": 54980,
+   "maxSimplifyError": 0.232,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "ribs_r": {
+   "file": "torso",
+   "triangles": 8994,
+   "vertices": 4511,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -137.025,
+     -197.579,
+     1105.33
+    ],
+    "max": [
+     -13.765,
+     -3.71,
+     1370.43
+    ]
+   },
+   "centroid": [
+    -85.869,
+    -87.887,
+    1245.097
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.32705,
+      0.49059,
+      0.80769
+     ],
+     [
+      -0.13542,
+      0.8702,
+      -0.47373
+     ],
+     [
+      0.93526,
+      -0.04555,
+      -0.35103
+     ]
+    ],
+    "min": [
+     -162.123,
+     -90.298,
+     -38.272
+    ],
+    "max": [
+     128.601,
+     94.351,
+     70.761
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3334",
+     "fma": "FMA7857",
+     "name": "Right first rib"
+    },
+    {
+     "id": "FJ3336",
+     "fma": "FMA7882",
+     "name": "Right second rib"
+    },
+    {
+     "id": "FJ3338",
+     "fma": "FMA7909",
+     "name": "Right third rib"
+    },
+    {
+     "id": "FJ3340",
+     "fma": "FMA7957",
+     "name": "Right fourth rib"
+    },
+    {
+     "id": "FJ3342",
+     "fma": "FMA8066",
+     "name": "Right fifth rib"
+    },
+    {
+     "id": "FJ3344",
+     "fma": "FMA8175",
+     "name": "Right sixth rib"
+    },
+    {
+     "id": "FJ3346",
+     "fma": "FMA8229",
+     "name": "Right seventh rib"
+    }
+   ],
+   "label": "Right ribs 1-7 (bone)",
+   "sourceTriangles": 54944,
+   "maxSimplifyError": 0.249,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "costal_cartilage": {
+   "file": "torso",
+   "triangles": 3986,
+   "vertices": 2021,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -109.909,
+     -213.19,
+     1102.58
+    ],
+    "max": [
+     108.457,
+     -122.171,
+     1320.25
+    ]
+   },
+   "centroid": [
+    -0.313,
+    -191.176,
+    1190.258
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.01158,
+      0.2561,
+      0.96658
+     ],
+     [
+      0.99993,
+      -0.00384,
+      -0.01096
+     ],
+     [
+      0.00091,
+      0.96664,
+      -0.25612
+     ]
+    ],
+    "min": [
+     -85.973,
+     -108.791,
+     -18.638
+    ],
+    "max": [
+     142.925,
+     109.561,
+     40.833
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3239",
+     "fma": "FMA8005",
+     "name": "Left first costal cartilage"
+    },
+    {
+     "id": "FJ3333",
+     "fma": "FMA7875",
+     "name": "Right first costal cartilage"
+    },
+    {
+     "id": "FJ3242",
+     "fma": "FMA8031",
+     "name": "Left second costal cartilage"
+    },
+    {
+     "id": "FJ3335",
+     "fma": "FMA7886",
+     "name": "Right second costal cartilage"
+    },
+    {
+     "id": "FJ3245",
+     "fma": "FMA8058",
+     "name": "Left third costal cartilage"
+    },
+    {
+     "id": "FJ3337",
+     "fma": "FMA7913",
+     "name": "Right third costal cartilage"
+    },
+    {
+     "id": "FJ3248",
+     "fma": "FMA8167",
+     "name": "Left fourth costal cartilage"
+    },
+    {
+     "id": "FJ3339",
+     "fma": "FMA7976",
+     "name": "Right fourth costal cartilage"
+    },
+    {
+     "id": "FJ3251",
+     "fma": "FMA8112",
+     "name": "Left fifth costal cartilage"
+    },
+    {
+     "id": "FJ3341",
+     "fma": "FMA8070",
+     "name": "Right fifth costal cartilage"
+    },
+    {
+     "id": "FJ3254",
+     "fma": "FMA8221",
+     "name": "Left sixth costal cartilage"
+    },
+    {
+     "id": "FJ3343",
+     "fma": "FMA8194",
+     "name": "Right sixth costal cartilage"
+    },
+    {
+     "id": "FJ3255",
+     "fma": "FMA8275",
+     "name": "Left seventh costal cartilage"
+    },
+    {
+     "id": "FJ3345",
+     "fma": "FMA8248",
+     "name": "Right seventh costal cartilage"
+    }
+   ],
+   "label": "Costal cartilages of ribs 1-7, both sides",
+   "sourceTriangles": 15214,
+   "maxSimplifyError": 0.338,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 63
+   },
+   "notes": [
+    "FJ3335: dropped 1 degenerate/tiny disconnected component(s) (2 tris)",
+    "FJ3343: dropped 6 degenerate/tiny disconnected component(s) (12 tris)",
+    "FJ3345: dropped 3 degenerate/tiny disconnected component(s) (6 tris)",
+    "intersecting triangle pairs: 0 within elements (source had 0), 63 between different source elements"
+   ]
+  },
+  "skin_torso": {
+   "file": "torso",
+   "triangles": 5999,
+   "vertices": 3469,
+   "closed": false,
+   "boundaryEdges": 943,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -199.5,
+     -225.523,
+     1085.19
+    ],
+    "max": [
+     199.49,
+     45.239,
+     1341.16
+    ]
+   },
+   "centroid": [
+    -0.114,
+    -84.561,
+    1213.567
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99999,
+      0.00367,
+      0.00316
+     ],
+     [
+      -0.00415,
+      0.9859,
+      0.16726
+     ],
+     [
+      -0.00251,
+      -0.16727,
+      0.98591
+     ]
+    ],
+    "min": [
+     -199.785,
+     -154.968,
+     -143.272
+    ],
+    "max": [
+     200.173,
+     136.872,
+     136.171
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ2810",
+     "fma": "FMA7163",
+     "name": "Skin"
+    }
+   ],
+   "label": "Upper-trunk skin, outer surface only (open cut edges; soft envelope)",
+   "sourceTriangles": 12061,
+   "cuts": {
+    "zTop": 1341.16,
+    "zBottom": 1085.19,
+    "xLeft": 199.49,
+    "xRight": -199.5,
+    "armSeparationZ": 1121
+   },
+   "maxSimplifyError": 0.192,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": null,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "cropped z 1085.19..1341.16 (bottom = 20 mm below lowest 7th-rib/xiphoid point), x -199.5..199.49 (35 mm lateral to humeral-head centres); 2 surface component(s) after cropping: 12639 tris, 2685 cm2, facing 0.71; 12622 tris, 2689 cm2, facing -0.71 -> kept the largest outward-facing one (outer skin surface), dropped the inner surface of the skin layer",
+    "arm and trunk skin are fused down to z≈1121; below it 2 detached arm strip(s) (578 tris) were dropped. Above z≈1121 the medial upper-arm skin inside the sagittal cuts remains (fused to the trunk in the source)."
+   ]
+  },
+  "thoracic_spine": {
+   "file": "torso",
+   "triangles": 13992,
+   "vertices": 6996,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -37.383,
+     -86.872,
+     1179.3
+    ],
+    "max": [
+     36.321,
+     0.019,
+     1376.9
+    ]
+   },
+   "centroid": [
+    -0.646,
+    -40.722,
+    1289.325
+   ],
+   "pca": {
+    "axes": [
+     [
+      -0.00011,
+      -0.22087,
+      0.9753
+     ],
+     [
+      -0.00214,
+      0.9753,
+      0.22087
+     ],
+     [
+      1,
+      0.00206,
+      0.00058
+     ]
+    ],
+    "min": [
+     -115.043,
+     -42.356,
+     -36.734
+    ],
+    "max": [
+     91.333,
+     41.786,
+     36.983
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ3158",
+     "fma": "FMA9165",
+     "name": "First thoracic vertebra"
+    },
+    {
+     "id": "FJ3160",
+     "fma": "FMA9187",
+     "name": "Second thoracic vertebra"
+    },
+    {
+     "id": "FJ3163",
+     "fma": "FMA9209",
+     "name": "Third thoracic vertebra"
+    },
+    {
+     "id": "FJ3166",
+     "fma": "FMA9248",
+     "name": "Fourth thoracic vertebra"
+    },
+    {
+     "id": "FJ3169",
+     "fma": "FMA9922",
+     "name": "Fifth thoracic vertebra"
+    },
+    {
+     "id": "FJ3171",
+     "fma": "FMA9945",
+     "name": "Sixth thoracic vertebra"
+    },
+    {
+     "id": "FJ3173",
+     "fma": "FMA9968",
+     "name": "Seventh thoracic vertebra"
+    }
+   ],
+   "label": "Thoracic vertebrae T1-T7 (no discs)",
+   "sourceTriangles": 14844,
+   "maxSimplifyError": 0.103,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "nerve_head": {
+   "file": "nerves",
+   "triangles": 46246,
+   "vertices": 23203,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -44.13,
+     -185.476,
+     1505.79
+    ],
+    "max": [
+     42.823,
+     -69.613,
+     1560.55
+    ]
+   },
+   "centroid": [
+    -0.685,
+    -122.158,
+    1533.2
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.00128,
+      0.99883,
+      0.04839
+     ],
+     [
+      1,
+      -0.00132,
+      0.00087
+     ],
+     [
+      -0.00093,
+      -0.04838,
+      0.99883
+     ]
+    ],
+    "min": [
+     -64.114,
+     -43.41,
+     -26.069
+    ],
+    "max": [
+     52.868,
+     43.543,
+     29.809
+    ]
+   },
+   "sources": [
+    {
+     "id": "FJ1313",
+     "fma": "FMA50878",
+     "name": "Left optic nerve"
+    },
+    {
+     "id": "FJ1364",
+     "fma": "FMA50875",
+     "name": "Right optic nerve"
+    },
+    {
+     "id": "FJ1771",
+     "fma": "FMA62045",
+     "name": "Optic chiasm"
+    },
+    {
+     "id": "FJ1818",
+     "fma": "FMA62045",
+     "name": "Optic chiasm"
+    },
+    {
+     "id": "FJ1773",
+     "fma": "FMA67936",
+     "name": "Left optic tract"
+    },
+    {
+     "id": "FJ1820",
+     "fma": "FMA62382",
+     "name": "Right optic tract"
+    },
+    {
+     "id": "FJ1321",
+     "fma": "FMA52575",
+     "name": "Superior branch of left oculomotor nerve"
+    },
+    {
+     "id": "FJ1372",
+     "fma": "FMA52574",
+     "name": "Superior branch of right oculomotor nerve"
+    },
+    {
+     "id": "FJ1293",
+     "fma": "FMA52577",
+     "name": "Inferior branch of left oculomotor nerve"
+    },
+    {
+     "id": "FJ1344",
+     "fma": "FMA52576",
+     "name": "Inferior branch of right oculomotor nerve"
+    },
+    {
+     "id": "FJ1330",
+     "fma": "FMA50882",
+     "name": "Left trochlear nerve"
+    },
+    {
+     "id": "FJ1381",
+     "fma": "FMA50881",
+     "name": "Right trochlear nerve"
+    },
+    {
+     "id": "FJ1312",
+     "fma": "FMA52623",
+     "name": "Left ophthalmic nerve"
+    },
+    {
+     "id": "FJ1363",
+     "fma": "FMA52622",
+     "name": "Right ophthalmic nerve"
+    },
+    {
+     "id": "FJ1290",
+     "fma": "FMA52640",
+     "name": "Left frontal nerve"
+    },
+    {
+     "id": "FJ1341",
+     "fma": "FMA52639",
+     "name": "Right frontal nerve"
+    },
+    {
+     "id": "FJ1325",
+     "fma": "FMA52657",
+     "name": "Left supra-orbital nerve"
+    },
+    {
+     "id": "FJ1376",
+     "fma": "FMA52656",
+     "name": "Right supra-orbital nerve"
+    },
+    {
+     "id": "FJ1326",
+     "fma": "FMA52644",
+     "name": "Left supratrochlear nerve"
+    },
+    {
+     "id": "FJ1377",
+     "fma": "FMA52643",
+     "name": "Right supratrochlear nerve"
+    },
+    {
+     "id": "FJ1300",
+     "fma": "FMA52630",
+     "name": "Left lacrimal nerve"
+    },
+    {
+     "id": "FJ1351",
+     "fma": "FMA52629",
+     "name": "Right lacrimal nerve"
+    },
+    {
+     "id": "FJ1310",
+     "fma": "FMA52670",
+     "name": "Left nasociliary nerve"
+    },
+    {
+     "id": "FJ1361",
+     "fma": "FMA52669",
+     "name": "Right nasociliary nerve"
+    },
+    {
+     "id": "FJ1296",
+     "fma": "FMA52699",
+     "name": "Left infratrochlear nerve"
+    },
+    {
+     "id": "FJ1347",
+     "fma": "FMA52698",
+     "name": "Right infratrochlear nerve"
+    },
+    {
+     "id": "FJ1283",
+     "fma": "FMA52677",
+     "name": "Left anterior ethmoidal nerve"
+    },
+    {
+     "id": "FJ1333",
+     "fma": "FMA52676",
+     "name": "Right anterior ethmoidal nerve"
+    },
+    {
+     "id": "FJ1315",
+     "fma": "FMA52716",
+     "name": "Left posterior ethmoidal nerve"
+    },
+    {
+     "id": "FJ1366",
+     "fma": "FMA52715",
+     "name": "Right posterior ethmoidal nerve"
+    },
+    {
+     "id": "FJ1318",
+     "fma": "FMA82735",
+     "name": "Left long ciliary nerve"
+    },
+    {
+     "id": "FJ1369",
+     "fma": "FMA82734",
+     "name": "Right long ciliary nerve"
+    },
+    {
+     "id": "FJ1319",
+     "fma": "FMA7041",
+     "name": "Short ciliary nerve"
+    },
+    {
+     "id": "FJ1370",
+     "fma": "FMA7041",
+     "name": "Short ciliary nerve"
+    },
+    {
+     "id": "FJ1311",
+     "fma": "FMA52674",
+     "name": "Communicating branch of left nasociliary nerve with left ciliary ganglion"
+    },
+    {
+     "id": "FJ1362",
+     "fma": "FMA52673",
+     "name": "Communicating branch of right nasociliary nerve with right ciliary ganglion"
+    },
+    {
+     "id": "FJ1288",
+     "fma": "FMA53550",
+     "name": "Left ciliary ganglion"
+    },
+    {
+     "id": "FJ1339",
+     "fma": "FMA53549",
+     "name": "Right ciliary ganglion"
+    }
+   ],
+   "label": "Cranial nerves of the orbit and visual pathway (as modelled in BodyParts3D 4.0)",
+   "sourceTriangles": 46246,
+   "maxSimplifyError": 0,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 4673
+   },
+   "notes": [
+    "skipped FJ1772 Left optic nerve: alternative model of the left optic nerve (duplicate of FJ1313)",
+    "skipped FJ1819 Right optic nerve: alternative model of the right optic nerve (duplicate of FJ1364)",
+    "intersecting triangle pairs: 0 within elements (source had 0), 4673 between different source elements"
+   ]
+  },
+  "muscle_masseter": {
+   "file": "muscles",
+   "triangles": 2486,
+   "vertices": 1252,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -64.899,
+     -145.756,
+     1438.097
+    ],
+    "max": [
+     63.519,
+     -97.728,
+     1506.484
+    ]
+   },
+   "centroid": [
+    -0.778,
+    -120.323,
+    1472.164
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.0001,
+      -0.0011
+     ],
+     [
+      0.00104,
+      0.26127,
+      0.96527
+     ],
+     [
+      -0.00038,
+      0.96527,
+      -0.26127
+     ]
+    ],
+    "min": [
+     -64.153,
+     -36.6,
+     -29.246
+    ],
+    "max": [
+     64.266,
+     38.721,
+     18.948
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA49002",
+     "fma": "FMA49002",
+     "name": "superficial part of left masseter"
+    },
+    {
+     "id": "FMA49001",
+     "fma": "FMA49001",
+     "name": "superficial part of right masseter"
+    },
+    {
+     "id": "FMA49005",
+     "fma": "FMA49005",
+     "name": "deep part of left masseter"
+    },
+    {
+     "id": "FMA49004",
+     "fma": "FMA49004",
+     "name": "deep part of right masseter"
+    }
+   ],
+   "label": "Masseter (superficial + deep parts)",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 9674,
+   "maxSimplifyError": 0.257,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 7,
+    "outputWithinElements": 5,
+    "betweenElements": 734
+   },
+   "notes": [
+    "FMA49005: simplification pinched 0 edge(s); resolved by splitting 3 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 5 within elements (source had 7), 734 between different source elements"
+   ]
+  },
+  "muscle_temporalis": {
+   "file": "muscles",
+   "triangles": 6554,
+   "vertices": 3280,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -79.362,
+     -153.344,
+     1472.699
+    ],
+    "max": [
+     78.035,
+     -36.189,
+     1591.644
+    ]
+   },
+   "centroid": [
+    -0.626,
+    -101.019,
+    1545.537
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00067,
+      0.00031
+     ],
+     [
+      0.00034,
+      0.78977,
+      0.61341
+     ],
+     [
+      -0.00065,
+      -0.61341,
+      0.78977
+     ]
+    ],
+    "min": [
+     -78.753,
+     -71.316,
+     -41.339
+    ],
+    "max": [
+     78.643,
+     65.546,
+     46.58
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA49008",
+     "fma": "FMA49008",
+     "name": "left temporalis"
+    },
+    {
+     "id": "FMA49007",
+     "fma": "FMA49007",
+     "name": "right temporalis"
+    }
+   ],
+   "label": "Temporalis",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 42200,
+   "maxSimplifyError": 0.246,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 23,
+    "outputWithinElements": 2,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA49008: dropped 15 degenerate/tiny disconnected component(s) (70 tris)",
+    "FMA49007: dropped 52 degenerate/tiny disconnected component(s) (250 tris)",
+    "intersecting triangle pairs: 2 within elements (source had 23), 0 between different source elements"
+   ]
+  },
+  "muscle_medial_pterygoid": {
+   "file": "muscles",
+   "triangles": 802,
+   "vertices": 404,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -38.485,
+     -131.041,
+     1453.12
+    ],
+    "max": [
+     37.161,
+     -99.565,
+     1503.529
+    ]
+   },
+   "centroid": [
+    -0.763,
+    -113.931,
+    1476.946
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00154,
+      0.00159
+     ],
+     [
+      -0.00191,
+      -0.23818,
+      0.97122
+     ],
+     [
+      0.00111,
+      0.97122,
+      0.23818
+     ]
+    ],
+    "min": [
+     -37.752,
+     -25.089,
+     -16.939
+    ],
+    "max": [
+     37.893,
+     25.479,
+     12.449
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA49013",
+     "fma": "FMA49013",
+     "name": "left medial pterygoid"
+    },
+    {
+     "id": "FMA49012",
+     "fma": "FMA49012",
+     "name": "right medial pterygoid"
+    }
+   ],
+   "label": "Medial pterygoid",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2932,
+   "maxSimplifyError": 0.219,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 1,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA49013: removed 6 duplicated (back-to-back) source triangles",
+    "FMA49012: dropped 5 degenerate/tiny disconnected component(s) (22 tris)"
+   ]
+  },
+  "muscle_lateral_pterygoid": {
+   "file": "muscles",
+   "triangles": 678,
+   "vertices": 347,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -44.68,
+     -121.274,
+     1482.09
+    ],
+    "max": [
+     43.496,
+     -96.084,
+     1511.75
+    ]
+   },
+   "centroid": [
+    -0.803,
+    -108.995,
+    1498.921
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00131,
+      0.00104
+     ],
+     [
+      -0.00096,
+      -0.05852,
+      0.99829
+     ],
+     [
+      -0.00137,
+      0.99829,
+      0.05852
+     ]
+    ],
+    "min": [
+     -43.861,
+     -16.308,
+     -11.647
+    ],
+    "max": [
+     44.317,
+     13.347,
+     13.188
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA49025",
+     "fma": "FMA49025",
+     "name": "upper head of left lateral pterygoid"
+    },
+    {
+     "id": "FMA49024",
+     "fma": "FMA49024",
+     "name": "upper head of right lateral pterygoid"
+    },
+    {
+     "id": "FMA49023",
+     "fma": "FMA49023",
+     "name": "lower head of left lateral pterygoid"
+    },
+    {
+     "id": "FMA49022",
+     "fma": "FMA49022",
+     "name": "lower head of right lateral pterygoid"
+    }
+   ],
+   "label": "Lateral pterygoid (upper + lower heads)",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2092,
+   "maxSimplifyError": 0.234,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 16,
+    "outputWithinElements": 0,
+    "betweenElements": 152
+   },
+   "notes": [
+    "intersecting triangle pairs: 0 within elements (source had 16), 152 between different source elements"
+   ]
+  },
+  "muscle_buccinator": {
+   "file": "muscles",
+   "triangles": 584,
+   "vertices": 296,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -37.283,
+     -160.746,
+     1440.687
+    ],
+    "max": [
+     36.056,
+     -131.216,
+     1477.902
+    ]
+   },
+   "centroid": [
+    -0.83,
+    -147.123,
+    1461.879
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00059,
+      -0.0015
+     ],
+     [
+      0.00157,
+      0.55975,
+      0.82866
+     ],
+     [
+      -0.00035,
+      0.82866,
+      -0.55975
+     ]
+    ],
+    "min": [
+     -36.461,
+     -21.634,
+     -15.811
+    ],
+    "max": [
+     36.873,
+     20.591,
+     10.947
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46836",
+     "fma": "FMA46836",
+     "name": "left buccinator"
+    },
+    {
+     "id": "FMA46835",
+     "fma": "FMA46835",
+     "name": "right buccinator"
+    }
+   ],
+   "label": "Buccinator",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 3536,
+   "maxSimplifyError": 0.299,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_orbicularis_oculi": {
+   "file": "muscles",
+   "triangles": 2020,
+   "vertices": 1010,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -55.243,
+     -177.234,
+     1494.83
+    ],
+    "max": [
+     53.98,
+     -144.98,
+     1545.684
+    ]
+   },
+   "centroid": [
+    -0.659,
+    -162.561,
+    1521.427
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00023,
+      0.00007
+     ],
+     [
+      -0.00012,
+      -0.21989,
+      0.97553
+     ],
+     [
+      0.00021,
+      0.97553,
+      0.21989
+     ]
+    ],
+    "min": [
+     -54.587,
+     -25.947,
+     -9.797
+    ],
+    "max": [
+     54.636,
+     26.152,
+     16.433
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46783",
+     "fma": "FMA46783",
+     "name": "orbital part of left orbicularis oculi"
+    },
+    {
+     "id": "FMA46782",
+     "fma": "FMA46782",
+     "name": "orbital part of right orbicularis oculi"
+    },
+    {
+     "id": "FMA46786",
+     "fma": "FMA46786",
+     "name": "palpebral part of left orbicularis oculi"
+    },
+    {
+     "id": "FMA46785",
+     "fma": "FMA46785",
+     "name": "palpebral part of right orbicularis oculi"
+    }
+   ],
+   "label": "Orbicularis oculi (orbital + palpebral parts)",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 12708,
+   "maxSimplifyError": 0.3,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 1,
+    "betweenElements": 374
+   },
+   "notes": [
+    "intersecting triangle pairs: 1 within elements (source had 0), 374 between different source elements"
+   ]
+  },
+  "muscle_orbicularis_oris": {
+   "file": "muscles",
+   "triangles": 1418,
+   "vertices": 713,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -33.551,
+     -185.592,
+     1434.547
+    ],
+    "max": [
+     32.205,
+     -157.37,
+     1481.063
+    ]
+   },
+   "centroid": [
+    -0.698,
+    -173.32,
+    1458.258
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00064,
+      -0.00133
+     ],
+     [
+      0.00124,
+      -0.1357,
+      0.99075
+     ],
+     [
+      0.00081,
+      0.99075,
+      0.1357
+     ]
+    ],
+    "min": [
+     -32.863,
+     -23.681,
+     -11.183
+    ],
+    "max": [
+     32.893,
+     22.982,
+     15.856
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46841",
+     "fma": "FMA46841",
+     "name": "orbicularis oris"
+    }
+   ],
+   "label": "Orbicularis oris",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 7520,
+   "maxSimplifyError": 0.299,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 249,
+    "outputWithinElements": 15,
+    "betweenElements": 0
+   },
+   "notes": [
+    "intersecting triangle pairs: 15 within elements (source had 249), 0 between different source elements"
+   ]
+  },
+  "muscle_frontalis": {
+   "file": "muscles",
+   "triangles": 3428,
+   "vertices": 1718,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -60.489,
+     -179.786,
+     1531.859
+    ],
+    "max": [
+     59.226,
+     -131.744,
+     1603.727
+    ]
+   },
+   "centroid": [
+    -0.671,
+    -163.699,
+    1571.026
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.0001,
+      0.00022
+     ],
+     [
+      -0.00024,
+      0.42442,
+      0.90547
+     ],
+     [
+      0,
+      0.90547,
+      -0.42442
+     ]
+    ],
+    "min": [
+     -59.816,
+     -38.715,
+     -15.164
+    ],
+    "max": [
+     59.899,
+     37.472,
+     24.409
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46760",
+     "fma": "FMA46760",
+     "name": "left frontalis"
+    },
+    {
+     "id": "FMA46759",
+     "fma": "FMA46759",
+     "name": "right frontalis"
+    }
+   ],
+   "label": "Frontalis (frontal belly of occipitofrontalis)",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 23470,
+   "maxSimplifyError": 0.27,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 4,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46760: dropped 7 degenerate/tiny disconnected component(s) (26 tris)"
+   ]
+  },
+  "muscle_occipitalis": {
+   "file": "muscles",
+   "triangles": 1526,
+   "vertices": 767,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -63.503,
+     -28.273,
+     1512.767
+    ],
+    "max": [
+     62.259,
+     19.391,
+     1546.681
+    ]
+   },
+   "centroid": [
+    -0.765,
+    0.298,
+    1530.003
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00021,
+      -0.00011
+     ],
+     [
+      0.00023,
+      0.91184,
+      0.41054
+     ],
+     [
+      0.00001,
+      -0.41054,
+      0.91184
+     ]
+    ],
+    "min": [
+     -62.733,
+     -31.105,
+     -18.869
+    ],
+    "max": [
+     63.029,
+     23.23,
+     18.379
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46762",
+     "fma": "FMA46762",
+     "name": "left occipitalis"
+    },
+    {
+     "id": "FMA46761",
+     "fma": "FMA46761",
+     "name": "right occipitalis"
+    }
+   ],
+   "label": "Occipitalis (occipital belly of occipitofrontalis)",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 10754,
+   "maxSimplifyError": 0.297,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 30,
+    "outputWithinElements": 2,
+    "betweenElements": 0
+   },
+   "notes": [
+    "intersecting triangle pairs: 2 within elements (source had 30), 0 between different source elements"
+   ]
+  },
+  "muscle_temporoparietalis": {
+   "file": "muscles",
+   "triangles": 7176,
+   "vertices": 3588,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -83.041,
+     -134.077,
+     1502.385
+    ],
+    "max": [
+     81.768,
+     -14.301,
+     1607.864
+    ]
+   },
+   "centroid": [
+    -0.646,
+    -70.911,
+    1559.115
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00002,
+      0.00009
+     ],
+     [
+      0.00005,
+      0.75039,
+      -0.661
+     ],
+     [
+      -0.00008,
+      0.661,
+      0.75039
+     ]
+    ],
+    "min": [
+     -82.395,
+     -66.072,
+     -53.009
+    ],
+    "max": [
+     82.414,
+     57.98,
+     50.783
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46764",
+     "fma": "FMA46764",
+     "name": "left temporoparietalis"
+    },
+    {
+     "id": "FMA46763",
+     "fma": "FMA46763",
+     "name": "right temporoparietalis"
+    }
+   ],
+   "label": "Temporoparietalis",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 48514,
+   "maxSimplifyError": 0.298,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 22,
+    "outputWithinElements": 9,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46763: dropped 70 degenerate/tiny disconnected component(s) (194 tris)",
+    "intersecting triangle pairs: 9 within elements (source had 22), 0 between different source elements"
+   ]
+  },
+  "muscle_procerus": {
+   "file": "muscles",
+   "triangles": 354,
+   "vertices": 179,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -24.428,
+     -179.71,
+     1521.887
+    ],
+    "max": [
+     23.108,
+     -173.607,
+     1559.302
+    ]
+   },
+   "centroid": [
+    -0.702,
+    -176.566,
+    1543.898
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99984,
+      -0.00064,
+      -0.01769
+     ],
+     [
+      0.01763,
+      -0.04989,
+      0.9986
+     ],
+     [
+      0.00153,
+      0.99875,
+      0.04987
+     ]
+    ],
+    "min": [
+     -23.784,
+     -21.774,
+     -4.165
+    ],
+    "max": [
+     23.744,
+     15.489,
+     3.047
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA55611",
+     "fma": "FMA55611",
+     "name": "left procerus"
+    },
+    {
+     "id": "FMA55610",
+     "fma": "FMA55610",
+     "name": "right procerus"
+    }
+   ],
+   "label": "Procerus",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2186,
+   "maxSimplifyError": 0.297,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 1,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA55611: dropped 3 degenerate/tiny disconnected component(s) (6 tris)",
+    "FMA55610: dropped 1 degenerate/tiny disconnected component(s) (2 tris)",
+    "intersecting triangle pairs: 1 within elements (source had 0), 0 between different source elements"
+   ]
+  },
+  "muscle_nasalis": {
+   "file": "muscles",
+   "triangles": 428,
+   "vertices": 218,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -15.818,
+     -190.701,
+     1490.349
+    ],
+    "max": [
+     14.519,
+     -168.43,
+     1531.698
+    ]
+   },
+   "centroid": [
+    -0.695,
+    -178.557,
+    1511.148
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99988,
+      -0.00402,
+      0.0152
+     ],
+     [
+      -0.0145,
+      0.13881,
+      0.99021
+     ],
+     [
+      0.00609,
+      0.99031,
+      -0.13874
+     ]
+    ],
+    "min": [
+     -15.418,
+     -20.026,
+     -11.878
+    ],
+    "max": [
+     14.914,
+     21.072,
+     10.403
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA55607",
+     "fma": "FMA55607",
+     "name": "left nasalis"
+    },
+    {
+     "id": "FMA55606",
+     "fma": "FMA55606",
+     "name": "right nasalis"
+    }
+   ],
+   "label": "Nasalis",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2936,
+   "maxSimplifyError": 0.299,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 21,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA55607: dropped 2 degenerate/tiny disconnected component(s) (4 tris)"
+   ]
+  },
+  "muscle_depressor_septi_nasi": {
+   "file": "muscles",
+   "triangles": 430,
+   "vertices": 219,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -17.69,
+     -179.592,
+     1468.402
+    ],
+    "max": [
+     16.375,
+     -171.807,
+     1484.886
+    ]
+   },
+   "centroid": [
+    -0.691,
+    -176.737,
+    1474.594
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00108,
+      -0.00007
+     ],
+     [
+      0.00005,
+      -0.01881,
+      0.99982
+     ],
+     [
+      0.00108,
+      0.99982,
+      0.01881
+     ]
+    ],
+    "min": [
+     -17.002,
+     -6.159,
+     -2.939
+    ],
+    "max": [
+     17.063,
+     10.292,
+     4.926
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA55609",
+     "fma": "FMA55609",
+     "name": "left depressor septi nasi"
+    },
+    {
+     "id": "FMA55608",
+     "fma": "FMA55608",
+     "name": "right depressor septi nasi"
+    }
+   ],
+   "label": "Depressor septi nasi",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 1188,
+   "maxSimplifyError": 0.17,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA55609: dropped 2 degenerate/tiny disconnected component(s) (4 tris)",
+    "FMA55608: dropped 2 degenerate/tiny disconnected component(s) (4 tris)"
+   ]
+  },
+  "muscle_corrugator_supercilii": {
+   "file": "muscles",
+   "triangles": 226,
+   "vertices": 117,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -32.934,
+     -174.251,
+     1530.234
+    ],
+    "max": [
+     31.189,
+     -167.124,
+     1549.713
+    ]
+   },
+   "centroid": [
+    -0.656,
+    -171.364,
+    1540.675
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00167,
+      -0.0003
+     ],
+     [
+      0.00007,
+      -0.1361,
+      0.9907
+     ],
+     [
+      0.0017,
+      0.99069,
+      0.1361
+     ]
+    ],
+    "min": [
+     -32.281,
+     -10.478,
+     -2.782
+    ],
+    "max": [
+     31.842,
+     8.99,
+     4.121
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46797",
+     "fma": "FMA46797",
+     "name": "left corrugator supercilii"
+    },
+    {
+     "id": "FMA46796",
+     "fma": "FMA46796",
+     "name": "right corrugator supercilii"
+    }
+   ],
+   "label": "Corrugator supercilii",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 1392,
+   "maxSimplifyError": 0.23,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 37,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46797: dropped 4 degenerate/tiny disconnected component(s) (20 tris)"
+   ]
+  },
+  "muscle_zygomaticus_major": {
+   "file": "muscles",
+   "triangles": 2504,
+   "vertices": 1214,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -57.488,
+     -165.99,
+     1450.508
+    ],
+    "max": [
+     56.15,
+     -139.692,
+     1506.467
+    ]
+   },
+   "centroid": [
+    -1.139,
+    -151.863,
+    1479.12
+   ],
+   "pca": {
+    "axes": [
+     [
+      0.99999,
+      -0.00085,
+      -0.00364
+     ],
+     [
+      0.00371,
+      0.34944,
+      0.93695
+     ],
+     [
+      -0.00047,
+      0.93696,
+      -0.34944
+     ]
+    ],
+    "min": [
+     -56.425,
+     -28.778,
+     -9.843
+    ],
+    "max": [
+     57.216,
+     27.335,
+     7.761
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46813",
+     "fma": "FMA46813",
+     "name": "left zygomaticus major"
+    },
+    {
+     "id": "FMA46812",
+     "fma": "FMA46812",
+     "name": "right zygomaticus major"
+    }
+   ],
+   "label": "Zygomaticus major",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 4198,
+   "maxSimplifyError": 0.3,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 58,
+    "outputWithinElements": 32,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46812: dropped 23 degenerate/tiny disconnected component(s) (68 tris)",
+    "FMA46812: simplification retried 38x with jittered/larger target to avoid unresolvable non-manifold edges: 2174 tris vs target 280",
+    "intersecting triangle pairs: 32 within elements (source had 58), 0 between different source elements"
+   ]
+  },
+  "muscle_zygomaticus_minor": {
+   "file": "muscles",
+   "triangles": 304,
+   "vertices": 156,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -52.194,
+     -174.956,
+     1473.357
+    ],
+    "max": [
+     50.822,
+     -149.867,
+     1505.28
+    ]
+   },
+   "centroid": [
+    -0.657,
+    -164.002,
+    1490.683
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00105,
+      0.00139
+     ],
+     [
+      -0.00174,
+      0.64758,
+      0.76199
+     ],
+     [
+      0.0001,
+      0.76199,
+      -0.64759
+     ]
+    ],
+    "min": [
+     -51.51,
+     -19.42,
+     -4.918
+    ],
+    "max": [
+     51.511,
+     19.264,
+     4.065
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46815",
+     "fma": "FMA46815",
+     "name": "left zygomaticus minor"
+    },
+    {
+     "id": "FMA46814",
+     "fma": "FMA46814",
+     "name": "right zygomaticus minor"
+    }
+   ],
+   "label": "Zygomaticus minor",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 1816,
+   "maxSimplifyError": 0.298,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 1,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46814: dropped 3 degenerate/tiny disconnected component(s) (6 tris)",
+    "intersecting triangle pairs: 1 within elements (source had 0), 0 between different source elements"
+   ]
+  },
+  "muscle_levator_labii_superioris": {
+   "file": "muscles",
+   "triangles": 374,
+   "vertices": 191,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -40.415,
+     -174.083,
+     1474.035
+    ],
+    "max": [
+     39.105,
+     -158.847,
+     1503.693
+    ]
+   },
+   "centroid": [
+    -0.694,
+    -167.815,
+    1491.8
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00051,
+      -0.00107
+     ],
+     [
+      0.00118,
+      0.33285,
+      0.94298
+     ],
+     [
+      0.00013,
+      0.94298,
+      -0.33285
+     ]
+    ],
+    "min": [
+     -39.733,
+     -18.642,
+     -6.294
+    ],
+    "max": [
+     39.787,
+     11.326,
+     6.143
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46807",
+     "fma": "FMA46807",
+     "name": "left levator labii superioris"
+    },
+    {
+     "id": "FMA46806",
+     "fma": "FMA46806",
+     "name": "right levator labii superioris"
+    }
+   ],
+   "label": "Levator labii superioris",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2160,
+   "maxSimplifyError": 0.295,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   }
+  },
+  "muscle_levator_labii_superioris_alaeque_nasi": {
+   "file": "muscles",
+   "triangles": 148,
+   "vertices": 78,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -16.871,
+     -174.5,
+     1484.629
+    ],
+    "max": [
+     15.66,
+     -167.167,
+     1514.503
+    ]
+   },
+   "centroid": [
+    -0.71,
+    -171.259,
+    1500.368
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00005,
+      0.00133
+     ],
+     [
+      -0.0013,
+      0.18562,
+      0.98262
+     ],
+     [
+      0.0003,
+      0.98262,
+      -0.18562
+     ]
+    ],
+    "min": [
+     -16.157,
+     -15.576,
+     -2.687
+    ],
+    "max": [
+     16.366,
+     14.306,
+     3.091
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46804",
+     "fma": "FMA46804",
+     "name": "left levator labii superioris alaeque nasi"
+    },
+    {
+     "id": "FMA46803",
+     "fma": "FMA46803",
+     "name": "right levator labii superioris alaeque nasi"
+    }
+   ],
+   "label": "Levator labii superioris alaeque nasi",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 672,
+   "maxSimplifyError": 0.298,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 0,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46803: dropped 1 degenerate/tiny disconnected component(s) (2 tris)"
+   ]
+  },
+  "muscle_levator_anguli_oris": {
+   "file": "muscles",
+   "triangles": 496,
+   "vertices": 260,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -30.401,
+     -173.678,
+     1469.14
+    ],
+    "max": [
+     29.008,
+     -157.639,
+     1489.649
+    ]
+   },
+   "centroid": [
+    -0.661,
+    -165.13,
+    1479.404
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00024,
+      -0.0007
+     ],
+     [
+      0.00074,
+      -0.32117,
+      0.94702
+     ],
+     [
+      0,
+      0.94702,
+      0.32117
+     ]
+    ],
+    "min": [
+     -29.733,
+     -11.876,
+     -8.703
+    ],
+    "max": [
+     29.677,
+     9.649,
+     7.467
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46824",
+     "fma": "FMA46824",
+     "name": "left levator anguli oris"
+    },
+    {
+     "id": "FMA46823",
+     "fma": "FMA46823",
+     "name": "right levator anguli oris"
+    }
+   ],
+   "label": "Levator anguli oris",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2544,
+   "maxSimplifyError": 0.209,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 88,
+    "outputWithinElements": 14,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46823: dropped 14 degenerate/tiny disconnected component(s) (30 tris)",
+    "FMA46824: simplification pinched 2 edge(s); resolved by splitting 4 vertices (duplicate positions, zero-thickness contact remains)",
+    "FMA46823: simplification retried 25x with jittered/larger target to avoid unresolvable non-manifold edges: 306 tris vs target 114",
+    "FMA46823: simplification pinched 2 edge(s); resolved by splitting 6 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 14 within elements (source had 88), 0 between different source elements"
+   ]
+  },
+  "muscle_depressor_anguli_oris": {
+   "file": "muscles",
+   "triangles": 540,
+   "vertices": 278,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -37.466,
+     -164.663,
+     1423.338
+    ],
+    "max": [
+     36.242,
+     -140.293,
+     1466.037
+    ]
+   },
+   "centroid": [
+    -0.617,
+    -153.857,
+    1439.85
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.0001,
+      0.00225
+     ],
+     [
+      -0.00225,
+      0.00423,
+      0.99999
+     ],
+     [
+      0.00011,
+      0.99999,
+      -0.00423
+     ]
+    ],
+    "min": [
+     -36.826,
+     -16.572,
+     -10.759
+    ],
+    "max": [
+     36.88,
+     26.224,
+     13.592
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46830",
+     "fma": "FMA46830",
+     "name": "left depressor anguli oris"
+    },
+    {
+     "id": "FMA46829",
+     "fma": "FMA46829",
+     "name": "right depressor anguli oris"
+    }
+   ],
+   "label": "Depressor anguli oris",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2980,
+   "maxSimplifyError": 0.297,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 51,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46829: dropped 2 degenerate/tiny disconnected component(s) (6 tris)",
+    "FMA46829: removed 4 duplicated (back-to-back) source triangles",
+    "FMA46830: simplification pinched 2 edge(s); resolved by splitting 4 vertices (duplicate positions, zero-thickness contact remains)",
+    "FMA46829: simplification pinched 1 edge(s); resolved by splitting 1 vertices (duplicate positions, zero-thickness contact remains)"
+   ]
+  },
+  "muscle_depressor_labii_inferioris": {
+   "file": "muscles",
+   "triangles": 584,
+   "vertices": 296,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -32.566,
+     -175.893,
+     1425.975
+    ],
+    "max": [
+     31.084,
+     -147.921,
+     1456.09
+    ]
+   },
+   "centroid": [
+    -0.704,
+    -164.219,
+    1440.735
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      -0.00053,
+      -0.0015
+     ],
+     [
+      0.00133,
+      0.79345,
+      0.60863
+     ],
+     [
+      0.00087,
+      -0.60863,
+      0.79345
+     ]
+    ],
+    "min": [
+     -31.875,
+     -9.874,
+     -13.222
+    ],
+    "max": [
+     31.775,
+     14.724,
+     10.745
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46818",
+     "fma": "FMA46818",
+     "name": "left depressor labii inferioris"
+    },
+    {
+     "id": "FMA46817",
+     "fma": "FMA46817",
+     "name": "right depressor labii inferioris"
+    }
+   ],
+   "label": "Depressor labii inferioris",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 3812,
+   "maxSimplifyError": 0.299,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 19,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46817: dropped 52 degenerate/tiny disconnected component(s) (146 tris)"
+   ]
+  },
+  "muscle_risorius": {
+   "file": "muscles",
+   "triangles": 430,
+   "vertices": 223,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -50.203,
+     -161.291,
+     1441.604
+    ],
+    "max": [
+     48.81,
+     -133.155,
+     1468.797
+    ]
+   },
+   "centroid": [
+    -0.772,
+    -144.172,
+    1457.378
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00006,
+      -0.0004
+     ],
+     [
+      -0.00023,
+      0.8935,
+      -0.44907
+     ],
+     [
+      0.00033,
+      0.44907,
+      0.8935
+     ]
+    ],
+    "min": [
+     -49.435,
+     -17.659,
+     -10.36
+    ],
+    "max": [
+     49.58,
+     14.665,
+     12.369
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46840",
+     "fma": "FMA46840",
+     "name": "left risorius"
+    },
+    {
+     "id": "FMA46839",
+     "fma": "FMA46839",
+     "name": "right risorius"
+    }
+   ],
+   "label": "Risorius",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 2640,
+   "maxSimplifyError": 0.283,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 2,
+    "outputWithinElements": 12,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46839: dropped 13 degenerate/tiny disconnected component(s) (42 tris)",
+    "FMA46840: simplification pinched 1 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)",
+    "FMA46839: simplification pinched 1 edge(s); resolved by splitting 2 vertices (duplicate positions, zero-thickness contact remains)",
+    "intersecting triangle pairs: 12 within elements (source had 2), 0 between different source elements"
+   ]
+  },
+  "muscle_mentalis": {
+   "file": "muscles",
+   "triangles": 404,
+   "vertices": 206,
+   "closed": true,
+   "boundaryEdges": 0,
+   "nonManifoldEdges": 0,
+   "bbox": {
+    "min": [
+     -15.465,
+     -172.6,
+     1423.574
+    ],
+    "max": [
+     14.075,
+     -165.344,
+     1438.702
+    ]
+   },
+   "centroid": [
+    -0.657,
+    -168.859,
+    1430.897
+   ],
+   "pca": {
+    "axes": [
+     [
+      1,
+      0.00066,
+      -0.001
+     ],
+     [
+      0.00081,
+      0.237,
+      0.97151
+     ],
+     [
+      -0.00088,
+      0.97151,
+      -0.237
+     ]
+    ],
+    "min": [
+     -14.81,
+     -7.252,
+     -3.186
+    ],
+    "max": [
+     14.729,
+     7.668,
+     3.276
+    ]
+   },
+   "sources": [
+    {
+     "id": "FMA46827",
+     "fma": "FMA46827",
+     "name": "left mentalis"
+    },
+    {
+     "id": "FMA46826",
+     "fma": "FMA46826",
+     "name": "right mentalis"
+    }
+   ],
+   "label": "Mentalis",
+   "release": "BodyParts3D 3.0",
+   "frameTransform": "BodyParts3D 3.0 positions mapped into the 4.0 frame with muscles.frameRegistration.matrix (baked into the vertices; node transform is identity)",
+   "sourceTriangles": 834,
+   "maxSimplifyError": 0.149,
+   "intersectingTrianglePairs": {
+    "sourceWithinElements": 1,
+    "outputWithinElements": 0,
+    "betweenElements": 0
+   },
+   "notes": [
+    "FMA46826: dropped 2 degenerate/tiny disconnected component(s) (10 tris)",
+    "FMA46827: simplification pinched 1 edge(s); resolved by splitting 1 vertices (duplicate positions, zero-thickness contact remains)",
+    "FMA46826: simplification retried 1x with jittered/larger target to avoid unresolvable non-manifold edges: 236 tris vs target 51"
+   ]
+  }
+ }
+}

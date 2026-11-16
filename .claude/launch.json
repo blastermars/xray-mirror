@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "xray-mirror",
+      "runtimeExecutable": "bunx",
+      "runtimeArgs": [
+        "vite",
+        "--port",
+        "5183",
+        "--strictPort"
+      ],
+      "port": 5183
+    },
+    {
+      "name": "xray-phone",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": [
+        "run",
+        "phone"
+      ],
+      "port": 5184,
+      "url": "https://localhost:5184"
+    }
+  ]
+}
