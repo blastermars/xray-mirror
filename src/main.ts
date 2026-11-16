@@ -23,13 +23,20 @@ async function boot() {
     start.textContent = "Unavailable";
     return;
   }
+  // Credits are built as text nodes and links, never as HTML: the strings come from a data file.
   const mf = app.manifest;
-  const link = (url: string | undefined, text: string) => (url ? `<a href="${url}" target="_blank" rel="noreferrer">${text}</a>` : text);
-  $("credits").innerHTML =
-    `Anatomy: ${app.attribution} (${link(mf?.licenseUrl, mf?.license ?? "")})` +
-    (mf?.muscles ? `; facial muscles: ${mf.muscles.attribution} (${link(mf.muscles.licenseUrl, mf.muscles.license)})` : "") +
-    `. Meshes were simplified and are reshaped live to fit the viewer. Tracking: MediaPipe. ` +
-    `This is an illustration, not an image of your body, and not a medical device.`;
+  const credits = $("credits");
+  credits.textContent = "";
+  const say = (text: string) => credits.append(text);
+  const cite = (label: string, url?: string) => {
+    if (!url || !/^https?:\/\//.test(url)) { say(label); return; }
+    const a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = label;
+    credits.append(a);
+  };
+  say(`Anatomy: ${app.attribution} (`); cite(mf?.license ?? "", mf?.licenseUrl); say(")");
+  if (mf?.muscles) { say(`; facial muscles: ${mf.muscles.attribution} (`); cite(mf.muscles.license, mf.muscles.licenseUrl); say(")"); }
+  say(". Meshes were simplified and are reshaped live to fit the viewer. Tracking: MediaPipe. This is an illustration, not an image of your body, and not a medical device.");
 
   const go = (source: FrameSource) => {
     stage.style.setProperty("--ar", String(source.width / source.height));
@@ -60,9 +67,13 @@ async function boot() {
     return;
   }
   if (params.has("src")) {
+    // test hook: play a video file instead of the camera. Only files served by this same site, so a
+    // crafted link cannot make the page load media from somewhere else.
+    const url = new URL(params.get("src")!, location.href);
+    if (url.origin !== location.origin) { fail("Test videos must come from this site."); start.textContent = "Unavailable"; return; }
     start.disabled = false;
     start.textContent = "Play test video";
-    start.onclick = async () => go(await openVideoFile(params.get("src")!));
+    start.onclick = async () => go(await openVideoFile(url.href));
     (window as unknown as Record<string, unknown>).__xray = { app };
     return;
   }
@@ -86,7 +97,8 @@ async function boot() {
       start.textContent = "Start camera";
     }
   };
-  (window as unknown as Record<string, unknown>).__xray = { app };
+  // debugging handle, development builds only
+  if (import.meta.env.DEV) (window as unknown as Record<string, unknown>).__xray = { app };
 }
 
 boot();

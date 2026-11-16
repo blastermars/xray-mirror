@@ -2,13 +2,16 @@ import { FilesetResolver, FaceLandmarker, HandLandmarker, ImageSegmenter, PoseLa
 import type { BodyObservation } from "../fit/torso";
 import { NUM_LANDMARKS } from "./faceGeometry";
 
-/** Must match the installed @mediapipe/tasks-vision version. */
+/**
+ * Third-party downloads, all pinned to a fixed version (never "latest"), so what runs cannot change
+ * under the site. The wasm version must match the installed @mediapipe/tasks-vision.
+ */
 const WASM_URL = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@1.2.3/wasm";
 const MODELS = "https://storage.googleapis.com/mediapipe-models";
 const FACE_MODEL = `${MODELS}/face_landmarker/face_landmarker/float16/1/face_landmarker.task`;
 const HAND_MODEL = `${MODELS}/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task`;
 /** 256×256, classes: 0 background, 1 hair, 2 body skin, 3 face skin, 4 clothes, 5 other */
-const SEG_MODEL = `${MODELS}/image_segmenter/selfie_multiclass_256x256/float32/latest/selfie_multiclass_256x256.tflite`;
+const SEG_MODEL = `${MODELS}/image_segmenter/selfie_multiclass_256x256/float32/1/selfie_multiclass_256x256.tflite`;
 
 type Vision = Awaited<ReturnType<typeof FilesetResolver.forVisionTasks>>;
 let visionPromise: Promise<Vision> | null = null;

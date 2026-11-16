@@ -21,6 +21,18 @@
       ],
       "port": 5184,
       "url": "https://localhost:5184"
+    },
+    {
+      "name": "xray-preview",
+      "runtimeExecutable": "bunx",
+      "runtimeArgs": [
+        "vite",
+        "preview",
+        "--port",
+        "5185",
+        "--strictPort"
+      ],
+      "port": 5185
     }
   ]
 }

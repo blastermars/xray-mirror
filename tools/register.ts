@@ -451,7 +451,7 @@ async function main() {
   (window as unknown as Record<string, unknown>).__template = template;
   (window as unknown as Record<string, unknown>).__report = report;
 
-  const r = await fetch("/__save?name=template.json", { method: "POST", body: JSON.stringify(template) });
+  const r = await fetch("/__save?name=template.json", { method: "POST", headers: { "X-Xray-Save": "1" }, body: JSON.stringify(template) });
   log(r.ok ? "saved public/assets/template.json" : `SAVE FAILED: ${r.status}`);
   document.title = r.ok ? "registration done" : "registration failed";
 }

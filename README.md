@@ -100,6 +100,16 @@ bun run test        # maths: pose, spline, jaw, hand placement, outline fit, fil
 `__xray.regions()` in the console report how far the fitted skull is from the truth.
 Add `&still` to hold it frontal, `&reshape=0` to test the template's own proportions.
 
+## Security and privacy
+
+- Video is processed in the browser and never uploaded. The only network requests are for the
+  site's own files and the tracking runtime and models (jsDelivr and Google storage, fixed versions).
+- The built site ships a Content Security Policy: no inline script, no `eval`, scripts and requests
+  limited to this site and those two hosts.
+- The `?src=` test hook only plays files from the same site.
+- The dev server's `/__save` endpoint (used by the registration page) exists only in development and
+  only accepts same-origin requests from this machine that carry its marker header.
+
 ## Limits
 
 - The top and back of the skull are hidden by hair and are estimated from the outline and from

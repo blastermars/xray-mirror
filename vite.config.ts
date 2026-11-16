@@ -16,10 +16,15 @@ function saveAssetPlugin(): Plugin {
       server.middlewares.use("/__save", (req, res) => {
         const url = new URL(req.url ?? "", "http://localhost");
         const name = basename(url.searchParams.get("name") ?? "");
-        // only this machine may write assets, even when the server is reachable from the network
+        // Only this machine may write assets, and only the registration page itself: the custom
+        // header cannot be sent by another website without a preflight this server never answers,
+        // and the Origin must be this dev server's own.
         const from = req.socket.remoteAddress ?? "";
         const local = from === "127.0.0.1" || from === "::1" || from === "::ffff:127.0.0.1";
-        if (!local || req.method !== "POST" || !/^[\w.-]+\.json$/.test(name)) {
+        const origin = req.headers.origin ?? "";
+        const sameOrigin = /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/.test(origin) && origin.endsWith("//" + (req.headers.host ?? ""));
+        const marked = req.headers["x-xray-save"] === "1";
+        if (!local || !sameOrigin || !marked || req.method !== "POST" || !/^[\w.-]+\.json$/.test(name)) {
           res.statusCode = 400;
           res.end("bad request");
           return;
@@ -44,9 +49,38 @@ function saveAssetPlugin(): Plugin {
  */
 const phone = process.env.PHONE === "1";
 
+/**
+ * Content Security Policy for the built site (as a meta tag: static hosts cannot set headers).
+ * Scripts only from this site and the pinned MediaPipe runtime on jsDelivr, no inline script, no
+ * eval; network requests only to this site and the two hosts the trackers download from.
+ * Not applied in development, where Vite injects styles and uses a websocket.
+ */
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'wasm-unsafe-eval' https://cdn.jsdelivr.net",
+  "connect-src 'self' https://cdn.jsdelivr.net https://storage.googleapis.com",
+  "img-src 'self' data: blob:",
+  "media-src 'self' blob: mediastream:",
+  "style-src 'self'",
+  "worker-src 'self' blob:",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'none'",
+].join("; ");
+
+function cspPlugin(): Plugin {
+  return {
+    name: "xray-csp",
+    apply: "build",
+    transformIndexHtml(html) {
+      return html.replace("<meta charset=\"utf-8\">", `<meta charset="utf-8">\n<meta http-equiv="Content-Security-Policy" content="${CSP}">\n<meta name="referrer" content="no-referrer">`);
+    },
+  };
+}
+
 export default defineConfig({
   base: "./",
-  plugins: [saveAssetPlugin(), ...(phone ? [basicSsl()] : [])],
+  plugins: [saveAssetPlugin(), cspPlugin(), ...(phone ? [basicSsl()] : [])],
   server: phone ? { host: true } : undefined,
   preview: phone ? { host: true } : undefined,
   build: {
